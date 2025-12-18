@@ -182,7 +182,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 400px;
+    height: 140px;
 }
 
 .logo {
@@ -195,16 +195,16 @@ img {
 }
 
 .logo-img {
-    height: 360px;
+    height: 220px;
     width: auto;
     object-fit: contain;
 }
 
 .logo-img-footer {
-    height: 400px;
+    height: 300px;
     width: auto;
     object-fit: contain;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .logo i {
