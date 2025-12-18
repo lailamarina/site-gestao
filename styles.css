@@ -185,6 +185,19 @@ img {
     color: var(--text-dark);
 }
 
+.logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-img-footer {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
 .logo i {
     font-size: 1.75rem;
     color: var(--primary);
