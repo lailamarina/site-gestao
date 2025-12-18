@@ -39,12 +39,19 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 16px;
     line-height: 1.6;
     color: var(--text);
     background-color: var(--white);
     overflow-x: hidden;
+}
+
+/* Tipografia - Lora para títulos */
+h1, h2, h3, h4, h5, h6,
+.hero-title,
+.section-title {
+    font-family: 'Lora', Georgia, serif;
 }
 
 a {
