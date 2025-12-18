@@ -2,25 +2,27 @@
 /* Variables & Reset */
 /* ==================== */
 :root {
-    --primary: #2563eb;
-    --primary-dark: #1d4ed8;
-    --primary-light: #3b82f6;
-    --secondary: #0f172a;
-    --accent: #06b6d4;
-    --text: #334155;
-    --text-light: #64748b;
-    --text-dark: #1e293b;
+    /* Paleta oficial da marca */
+    --primary: #5D2410;        /* Cor de liderança - destaque/base poderosa */
+    --primary-dark: #412E27;   /* Textos, contrastes, peso visual */
+    --primary-light: #7F6044;  /* Fundo, box, elementos de chamada */
+    --secondary: #412E27;      /* Textos e contrastes */
+    --accent: #7F6044;         /* Elementos de destaque secundário */
+    --cream: #EDE1D1;          /* Equilibrar, composição leve */
+    --text: #412E27;           /* Texto principal */
+    --text-light: #7F6044;     /* Texto secundário */
+    --text-dark: #412E27;      /* Texto escuro */
     --white: #ffffff;
-    --gray-50: #f8fafc;
-    --gray-100: #f1f5f9;
-    --gray-200: #e2e8f0;
-    --gray-300: #cbd5e1;
-    --success: #10b981;
-    --gradient: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --gray-50: #EDE1D1;        /* Usando cream como cinza claro */
+    --gray-100: #EDE1D1;
+    --gray-200: #d4c9ba;
+    --gray-300: #7F6044;
+    --success: #5D2410;
+    --gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    --shadow-sm: 0 1px 2px rgba(65, 46, 39, 0.1);
+    --shadow: 0 4px 6px -1px rgba(65, 46, 39, 0.15);
+    --shadow-lg: 0 10px 15px -3px rgba(65, 46, 39, 0.15);
+    --shadow-xl: 0 20px 25px -5px rgba(65, 46, 39, 0.2);
     --radius: 12px;
     --radius-lg: 20px;
     --transition: all 0.3s ease;
@@ -123,7 +125,7 @@ img {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 10px 20px rgba(93, 36, 16, 0.3);
 }
 
 .btn-outline {
