@@ -7,100 +7,140 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo-selo.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/img/logo-selo.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/logo-selo.png">
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D2410',
+                        'primary-dark': '#412E27',
+                        'primary-light': '#7F6044',
+                        cream: '#EDE1D1',
+                        text: '#412E27',
+                        'text-light': '#7F6044',
+                    },
+                    fontFamily: {
+                        'heading': ['Lora', 'Georgia', 'serif'],
+                        'body': ['Nunito Sans', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Nunito Sans', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Lora', Georgia, serif; }
+        .gradient-bg { background: linear-gradient(135deg, #5D2410 0%, #7F6044 100%); }
+        .gradient-text {
+            background: linear-gradient(135deg, #5D2410 0%, #7F6044 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-white text-text">
     <!-- Header -->
-    <header class="header" id="header">
-        <div class="container">
-            <nav class="nav">
-                <a href="#" class="logo">
-                    <img src="assets/img/logo.png" alt="Gestão Estratégica e Negócios 360" class="logo-img">
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex items-center justify-between h-32 md:h-36 lg:h-40">
+                <a href="#" class="flex-shrink-0">
+                    <img src="assets/img/logo.png" alt="Gestão Estratégica e Negócios 360" class="h-24 md:h-32 lg:h-44 w-auto">
                 </a>
-                <ul class="nav-list" id="nav-list">
-                    <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
-                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
-                    <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
-                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                <ul class="hidden md:flex items-center gap-6 lg:gap-10">
+                    <li><a href="#home" class="font-medium text-text hover:text-primary transition-colors">Home</a></li>
+                    <li><a href="#sobre" class="font-medium text-text hover:text-primary transition-colors">Sobre</a></li>
+                    <li><a href="#servicos" class="font-medium text-text hover:text-primary transition-colors">Serviços</a></li>
+                    <li><a href="#depoimentos" class="font-medium text-text hover:text-primary transition-colors">Depoimentos</a></li>
+                    <li><a href="#contato" class="font-medium text-text hover:text-primary transition-colors">Contato</a></li>
                 </ul>
-                <button class="nav-toggle" id="nav-toggle">
+                <button id="nav-toggle" class="md:hidden text-2xl text-text">
                     <i class="fas fa-bars"></i>
                 </button>
             </nav>
         </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <ul class="flex flex-col py-4 px-4 space-y-4">
+                <li><a href="#home" class="block font-medium text-text hover:text-primary">Home</a></li>
+                <li><a href="#sobre" class="block font-medium text-text hover:text-primary">Sobre</a></li>
+                <li><a href="#servicos" class="block font-medium text-text hover:text-primary">Serviços</a></li>
+                <li><a href="#depoimentos" class="block font-medium text-text hover:text-primary">Depoimentos</a></li>
+                <li><a href="#contato" class="block font-medium text-text hover:text-primary">Contato</a></li>
+            </ul>
+        </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    Posicionamos negócios para construir <span class="highlight">legados reais.</span>
+    <section id="home" class="min-h-screen flex items-center pt-40 md:pt-44 lg:pt-48 pb-16 md:pb-20 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full gradient-bg opacity-10 -z-10" style="clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="max-w-3xl">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-dark leading-tight mb-6">
+                    Posicionamos negócios para construir <span class="gradient-text">legados reais.</span>
                 </h1>
-                <p class="hero-subtitle">
-                    Crescer não é aparecer mais.<br>
+                <p class="text-lg sm:text-xl md:text-2xl text-text font-medium italic font-heading mb-6 leading-relaxed">
+                    Crescer não é aparecer mais.<br class="hidden sm:block">
                     Crescer é ter direção, estrutura e clareza para sustentar resultados ao longo do tempo.
                 </p>
-                <p class="hero-description">
+                <p class="text-base sm:text-lg text-text-light mb-8 leading-relaxed max-w-2xl">
                     A Gestão Estratégica e Negócios 360° nasce para empresários que já construíram algo,
                     mas entendem que o próximo nível exige método, visão estratégica e decisões conscientes.
                     Aqui, não prometemos atalhos. Construímos bases sólidas para negócios que querem crescer com verdade.
                 </p>
-                <div class="hero-buttons">
-                    <a href="#contato" class="btn btn-primary">Quero estruturar meu negócio</a>
-                </div>
+                <a href="#contato" class="inline-flex items-center gap-2 gradient-bg text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    Quero estruturar meu negócio
+                </a>
             </div>
         </div>
-        <div class="hero-bg"></div>
     </section>
 
     <!-- Sobre Section -->
-    <section class="sobre" id="sobre">
-        <div class="container">
-            <div class="sobre-content">
-                <div class="sobre-text">
-                    <span class="section-tag">Sobre Nós</span>
-                    <h2 class="section-title">Excelência em consultoria empresarial</h2>
-                    <p>
-                        Há mais de uma década, a <strong>Gestão & Negócios</strong> tem sido referência
+    <section id="sobre" class="py-16 md:py-24 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="order-2 lg:order-1">
+                    <span class="inline-block px-4 py-2 bg-white text-primary text-sm font-semibold rounded-full mb-4">Sobre Nós</span>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-dark mb-6">Excelência em consultoria empresarial</h2>
+                    <p class="text-text-light mb-4 leading-relaxed">
+                        Há mais de uma década, a <strong class="text-text">Gestão & Negócios</strong> tem sido referência
                         em consultoria empresarial, ajudando empresas de diversos portes e segmentos
                         a alcançarem seus objetivos de crescimento e eficiência.
                     </p>
-                    <p>
+                    <p class="text-text-light mb-8 leading-relaxed">
                         Nossa equipe de especialistas combina experiência prática com metodologias
                         modernas para entregar soluções personalizadas que realmente funcionam.
                     </p>
-                    <div class="sobre-features">
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Metodologia comprovada</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-primary text-xl"></i>
+                            <span class="font-medium text-text">Metodologia comprovada</span>
                         </div>
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Equipe especializada</span>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-primary text-xl"></i>
+                            <span class="font-medium text-text">Equipe especializada</span>
                         </div>
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Resultados mensuráveis</span>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-primary text-xl"></i>
+                            <span class="font-medium text-text">Resultados mensuráveis</span>
                         </div>
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Suporte contínuo</span>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-primary text-xl"></i>
+                            <span class="font-medium text-text">Suporte contínuo</span>
                         </div>
                     </div>
                 </div>
-                <div class="sobre-image">
-                    <div class="image-wrapper">
-                        <div class="image-placeholder">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="experience-badge">
-                            <span class="badge-number">12+</span>
-                            <span class="badge-text">Anos de<br>Experiência</span>
-                        </div>
+                <div class="order-1 lg:order-2 relative">
+                    <div class="gradient-bg rounded-2xl h-64 sm:h-80 md:h-96 flex items-center justify-center">
+                        <i class="fas fa-users text-white/30 text-7xl sm:text-8xl md:text-9xl"></i>
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-2xl">
+                        <span class="block text-4xl font-bold text-primary">12+</span>
+                        <span class="text-sm text-text-light">Anos de<br>Experiência</span>
                     </div>
                 </div>
             </div>
@@ -108,246 +148,267 @@
     </section>
 
     <!-- Serviços Section -->
-    <section class="servicos" id="servicos">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Nossos Serviços</span>
-                <h2 class="section-title">Soluções completas para seu negócio</h2>
-                <p class="section-description">
+    <section id="servicos" class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 md:mb-16">
+                <span class="inline-block px-4 py-2 bg-cream text-primary text-sm font-semibold rounded-full mb-4">Nossos Serviços</span>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-dark mb-4">Soluções completas para seu negócio</h2>
+                <p class="text-text-light max-w-2xl mx-auto">
                     Oferecemos uma gama completa de serviços de consultoria para
                     atender todas as necessidades da sua empresa.
                 </p>
             </div>
-            <div class="servicos-grid">
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-bullseye"></i>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-cream rounded-xl flex items-center justify-center mb-6 group-hover:gradient-bg transition-all duration-300">
+                        <i class="fas fa-bullseye text-2xl text-primary group-hover:text-white transition-colors"></i>
                     </div>
-                    <h3>Planejamento Estratégico</h3>
-                    <p>Definição de metas, análise de mercado e criação de planos de ação para o crescimento sustentável.</p>
-                    <a href="#contato" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    <h3 class="text-xl font-bold text-primary-dark mb-3">Planejamento Estratégico</h3>
+                    <p class="text-text-light mb-4">Definição de metas, análise de mercado e criação de planos de ação para o crescimento sustentável.</p>
+                    <a href="#contato" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-cogs"></i>
+                <!-- Card 2 -->
+                <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-cream rounded-xl flex items-center justify-center mb-6 group-hover:gradient-bg transition-all duration-300">
+                        <i class="fas fa-cogs text-2xl text-primary group-hover:text-white transition-colors"></i>
                     </div>
-                    <h3>Gestão de Processos</h3>
-                    <p>Mapeamento, análise e otimização de processos para aumentar a eficiência operacional.</p>
-                    <a href="#contato" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    <h3 class="text-xl font-bold text-primary-dark mb-3">Gestão de Processos</h3>
+                    <p class="text-text-light mb-4">Mapeamento, análise e otimização de processos para aumentar a eficiência operacional.</p>
+                    <a href="#contato" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-chart-pie"></i>
+                <!-- Card 3 -->
+                <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-cream rounded-xl flex items-center justify-center mb-6 group-hover:gradient-bg transition-all duration-300">
+                        <i class="fas fa-chart-pie text-2xl text-primary group-hover:text-white transition-colors"></i>
                     </div>
-                    <h3>Gestão Financeira</h3>
-                    <p>Controle financeiro, análise de custos e planejamento orçamentário para maximizar lucros.</p>
-                    <a href="#contato" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    <h3 class="text-xl font-bold text-primary-dark mb-3">Gestão Financeira</h3>
+                    <p class="text-text-light mb-4">Controle financeiro, análise de custos e planejamento orçamentário para maximizar lucros.</p>
+                    <a href="#contato" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-users-cog"></i>
+                <!-- Card 4 -->
+                <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-cream rounded-xl flex items-center justify-center mb-6 group-hover:gradient-bg transition-all duration-300">
+                        <i class="fas fa-users-cog text-2xl text-primary group-hover:text-white transition-colors"></i>
                     </div>
-                    <h3>Gestão de Pessoas</h3>
-                    <p>Desenvolvimento de equipes, cultura organizacional e programas de capacitação.</p>
-                    <a href="#contato" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    <h3 class="text-xl font-bold text-primary-dark mb-3">Gestão de Pessoas</h3>
+                    <p class="text-text-light mb-4">Desenvolvimento de equipes, cultura organizacional e programas de capacitação.</p>
+                    <a href="#contato" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-digital-tachograph"></i>
+                <!-- Card 5 -->
+                <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-cream rounded-xl flex items-center justify-center mb-6 group-hover:gradient-bg transition-all duration-300">
+                        <i class="fas fa-laptop-code text-2xl text-primary group-hover:text-white transition-colors"></i>
                     </div>
-                    <h3>Transformação Digital</h3>
-                    <p>Implementação de tecnologias e digitalização de processos para modernizar seu negócio.</p>
-                    <a href="#contato" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    <h3 class="text-xl font-bold text-primary-dark mb-3">Transformação Digital</h3>
+                    <p class="text-text-light mb-4">Implementação de tecnologias e digitalização de processos para modernizar seu negócio.</p>
+                    <a href="#contato" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-handshake"></i>
+                <!-- Card 6 -->
+                <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-cream rounded-xl flex items-center justify-center mb-6 group-hover:gradient-bg transition-all duration-300">
+                        <i class="fas fa-handshake text-2xl text-primary group-hover:text-white transition-colors"></i>
                     </div>
-                    <h3>Mentoria Empresarial</h3>
-                    <p>Acompanhamento personalizado para empresários e gestores desenvolverem suas habilidades.</p>
-                    <a href="#contato" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    <h3 class="text-xl font-bold text-primary-dark mb-3">Mentoria Empresarial</h3>
+                    <p class="text-text-light mb-4">Acompanhamento personalizado para empresários e gestores desenvolverem suas habilidades.</p>
+                    <a href="#contato" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Depoimentos Section -->
-    <section class="depoimentos" id="depoimentos">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Depoimentos</span>
-                <h2 class="section-title">O que nossos clientes dizem</h2>
-                <p class="section-description">
+    <section id="depoimentos" class="py-16 md:py-24 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 md:mb-16">
+                <span class="inline-block px-4 py-2 bg-white text-primary text-sm font-semibold rounded-full mb-4">Depoimentos</span>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-dark mb-4">O que nossos clientes dizem</h2>
+                <p class="text-text-light max-w-2xl mx-auto">
                     Veja como ajudamos empresas a transformarem seus negócios.
                 </p>
             </div>
-            <div class="depoimentos-slider">
-                <div class="depoimento-card">
-                    <div class="depoimento-content">
-                        <div class="quote-icon">
-                            <i class="fas fa-quote-left"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Depoimento 1 -->
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+                    <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-quote-left text-white"></i>
+                    </div>
+                    <p class="text-text italic mb-6 leading-relaxed">
+                        "A consultoria da Gestão & Negócios foi transformadora para nossa empresa.
+                        Em apenas 6 meses, conseguimos aumentar nosso faturamento em 40% e reduzir
+                        custos operacionais significativamente."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-text-light"></i>
                         </div>
-                        <p class="depoimento-text">
-                            "A consultoria da Gestão & Negócios foi transformadora para nossa empresa.
-                            Em apenas 6 meses, conseguimos aumentar nosso faturamento em 40% e reduzir
-                            custos operacionais significativamente."
-                        </p>
-                        <div class="depoimento-author">
-                            <div class="author-avatar">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div class="author-info">
-                                <h4>Carlos Silva</h4>
-                                <span>CEO - TechSolutions</span>
-                            </div>
+                        <div>
+                            <h4 class="font-bold text-primary-dark">Carlos Silva</h4>
+                            <span class="text-sm text-text-light">CEO - TechSolutions</span>
                         </div>
                     </div>
                 </div>
-                <div class="depoimento-card">
-                    <div class="depoimento-content">
-                        <div class="quote-icon">
-                            <i class="fas fa-quote-left"></i>
+                <!-- Depoimento 2 -->
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+                    <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-quote-left text-white"></i>
+                    </div>
+                    <p class="text-text italic mb-6 leading-relaxed">
+                        "Profissionais extremamente competentes e dedicados. O planejamento estratégico
+                        desenvolvido nos deu clareza e direção. Recomendo fortemente para qualquer
+                        empresa que busca crescimento."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-text-light"></i>
                         </div>
-                        <p class="depoimento-text">
-                            "Profissionais extremamente competentes e dedicados. O planejamento estratégico
-                            desenvolvido nos deu clareza e direção. Recomendo fortemente para qualquer
-                            empresa que busca crescimento."
-                        </p>
-                        <div class="depoimento-author">
-                            <div class="author-avatar">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div class="author-info">
-                                <h4>Ana Rodrigues</h4>
-                                <span>Diretora - Innova Marketing</span>
-                            </div>
+                        <div>
+                            <h4 class="font-bold text-primary-dark">Ana Rodrigues</h4>
+                            <span class="text-sm text-text-light">Diretora - Innova Marketing</span>
                         </div>
                     </div>
                 </div>
-                <div class="depoimento-card">
-                    <div class="depoimento-content">
-                        <div class="quote-icon">
-                            <i class="fas fa-quote-left"></i>
+                <!-- Depoimento 3 -->
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg md:col-span-2 lg:col-span-1">
+                    <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-quote-left text-white"></i>
+                    </div>
+                    <p class="text-text italic mb-6 leading-relaxed">
+                        "A reestruturação dos nossos processos internos foi fundamental para escalarmos
+                        o negócio. A equipe da Gestão & Negócios entendeu nossas necessidades e entregou
+                        resultados acima do esperado."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-text-light"></i>
                         </div>
-                        <p class="depoimento-text">
-                            "A reestruturação dos nossos processos internos foi fundamental para escalarmos
-                            o negócio. A equipe da Gestão & Negócios entendeu nossas necessidades e entregou
-                            resultados acima do esperado."
-                        </p>
-                        <div class="depoimento-author">
-                            <div class="author-avatar">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div class="author-info">
-                                <h4>Roberto Mendes</h4>
-                                <span>Fundador - StartUp Hub</span>
-                            </div>
+                        <div>
+                            <h4 class="font-bold text-primary-dark">Roberto Mendes</h4>
+                            <span class="text-sm text-text-light">Fundador - StartUp Hub</span>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="slider-controls">
-                <button class="slider-btn prev" id="prev-btn">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div class="slider-dots" id="slider-dots"></div>
-                <button class="slider-btn next" id="next-btn">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Pronto para transformar seu negócio?</h2>
-                <p>Agende uma consultoria gratuita e descubra como podemos ajudar sua empresa a crescer.</p>
-                <a href="#contato" class="btn btn-white">Agendar Consultoria</a>
-            </div>
+    <section class="py-16 md:py-24 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">Pronto para transformar seu negócio?</h2>
+            <p class="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+                Agende uma consultoria gratuita e descubra como podemos ajudar sua empresa a crescer.
+            </p>
+            <a href="#contato" class="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                Agendar Consultoria
+            </a>
         </div>
     </section>
 
     <!-- Contato Section -->
-    <section class="contato" id="contato">
-        <div class="container">
-            <div class="contato-wrapper">
-                <div class="contato-info">
-                    <span class="section-tag">Contato</span>
-                    <h2 class="section-title">Vamos conversar?</h2>
-                    <p>
+    <section id="contato" class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+                <div>
+                    <span class="inline-block px-4 py-2 bg-cream text-primary text-sm font-semibold rounded-full mb-4">Contato</span>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-dark mb-4">Vamos conversar?</h2>
+                    <p class="text-text-light mb-8">
                         Entre em contato conosco e descubra como podemos ajudar
                         sua empresa a alcançar novos patamares.
                     </p>
-                    <div class="info-items">
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <i class="fas fa-map-marker-alt"></i>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-cream rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-primary"></i>
                             </div>
-                            <div class="info-text">
-                                <h4>Endereço</h4>
-                                <p>Av. Paulista, 1000 - São Paulo, SP</p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="info-text">
-                                <h4>Telefone</h4>
-                                <p>(11) 99999-9999</p>
+                            <div>
+                                <h4 class="font-bold text-text">Endereço</h4>
+                                <p class="text-text-light">Av. Paulista, 1000 - São Paulo, SP</p>
                             </div>
                         </div>
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <i class="fas fa-envelope"></i>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-cream rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone-alt text-primary"></i>
                             </div>
-                            <div class="info-text">
-                                <h4>E-mail</h4>
-                                <p>contato@gestaonegocios.com.br</p>
+                            <div>
+                                <h4 class="font-bold text-text">Telefone</h4>
+                                <p class="text-text-light">(11) 99999-9999</p>
                             </div>
                         </div>
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <i class="fas fa-clock"></i>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-cream rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-primary"></i>
                             </div>
-                            <div class="info-text">
-                                <h4>Horário</h4>
-                                <p>Seg - Sex: 9h às 18h</p>
+                            <div>
+                                <h4 class="font-bold text-text">E-mail</h4>
+                                <p class="text-text-light">contato@gestaonegocios.com.br</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-cream rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-text">Horário</h4>
+                                <p class="text-text-light">Seg - Sex: 9h às 18h</p>
                             </div>
                         </div>
                     </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    <div class="flex gap-3 mt-8">
+                        <a href="#" class="w-11 h-11 bg-cream rounded-full flex items-center justify-center text-text hover:gradient-bg hover:text-white transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-11 h-11 bg-cream rounded-full flex items-center justify-center text-text hover:gradient-bg hover:text-white transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-11 h-11 bg-cream rounded-full flex items-center justify-center text-text hover:gradient-bg hover:text-white transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-11 h-11 bg-cream rounded-full flex items-center justify-center text-text hover:gradient-bg hover:text-white transition-all">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="contato-form">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label for="nome">Nome completo</label>
-                            <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+                <div class="bg-white p-6 md:p-10 rounded-2xl shadow-2xl">
+                    <form id="contact-form" class="space-y-5">
+                        <div>
+                            <label for="nome" class="block font-medium text-text mb-2">Nome completo</label>
+                            <input type="text" id="nome" name="nome" required placeholder="Seu nome"
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors">
                         </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">E-mail</label>
-                                <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="email" class="block font-medium text-text mb-2">E-mail</label>
+                                <input type="email" id="email" name="email" required placeholder="seu@email.com"
+                                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors">
                             </div>
-                            <div class="form-group">
-                                <label for="telefone">Telefone</label>
-                                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+                            <div>
+                                <label for="telefone" class="block font-medium text-text mb-2">Telefone</label>
+                                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000"
+                                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="empresa">Empresa</label>
-                            <input type="text" id="empresa" name="empresa" placeholder="Nome da sua empresa">
+                        <div>
+                            <label for="empresa" class="block font-medium text-text mb-2">Empresa</label>
+                            <input type="text" id="empresa" name="empresa" placeholder="Nome da sua empresa"
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors">
                         </div>
-                        <div class="form-group">
-                            <label for="servico">Serviço de interesse</label>
-                            <select id="servico" name="servico">
+                        <div>
+                            <label for="servico" class="block font-medium text-text mb-2">Serviço de interesse</label>
+                            <select id="servico" name="servico"
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors">
                                 <option value="">Selecione um serviço</option>
                                 <option value="planejamento">Planejamento Estratégico</option>
                                 <option value="processos">Gestão de Processos</option>
@@ -357,11 +418,12 @@
                                 <option value="mentoria">Mentoria Empresarial</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="mensagem">Mensagem</label>
-                            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Como podemos ajudar?"></textarea>
+                        <div>
+                            <label for="mensagem" class="block font-medium text-text mb-2">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Como podemos ajudar?"
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors resize-y"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">
+                        <button type="submit" class="w-full gradient-bg text-white px-6 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2">
                             Enviar Mensagem
                             <i class="fas fa-paper-plane"></i>
                         </button>
@@ -372,49 +434,95 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <img src="assets/img/logo-vertical.png" alt="Gestão Estratégica e Negócios 360" class="logo-img-footer">
+    <footer class="bg-primary-dark py-12 md:py-16 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+                <div>
+                    <a href="#" class="block mb-4">
+                        <img src="assets/img/logo-vertical.png" alt="Gestão Estratégica e Negócios 360" class="h-48 md:h-60 w-auto brightness-0 invert opacity-90">
                     </a>
-                    <p>Transformando empresas e impulsionando resultados há mais de 12 anos.</p>
+                    <p class="text-gray-400">Transformando empresas e impulsionando resultados há mais de 12 anos.</p>
                 </div>
-                <div class="footer-links">
-                    <h4>Links Rápidos</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#sobre">Sobre</a></li>
-                        <li><a href="#servicos">Serviços</a></li>
-                        <li><a href="#depoimentos">Depoimentos</a></li>
-                        <li><a href="#contato">Contato</a></li>
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Links Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#sobre" class="hover:text-white transition-colors">Sobre</a></li>
+                        <li><a href="#servicos" class="hover:text-white transition-colors">Serviços</a></li>
+                        <li><a href="#depoimentos" class="hover:text-white transition-colors">Depoimentos</a></li>
+                        <li><a href="#contato" class="hover:text-white transition-colors">Contato</a></li>
                     </ul>
                 </div>
-                <div class="footer-links">
-                    <h4>Serviços</h4>
-                    <ul>
-                        <li><a href="#servicos">Planejamento Estratégico</a></li>
-                        <li><a href="#servicos">Gestão de Processos</a></li>
-                        <li><a href="#servicos">Gestão Financeira</a></li>
-                        <li><a href="#servicos">Transformação Digital</a></li>
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Serviços</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#servicos" class="hover:text-white transition-colors">Planejamento Estratégico</a></li>
+                        <li><a href="#servicos" class="hover:text-white transition-colors">Gestão de Processos</a></li>
+                        <li><a href="#servicos" class="hover:text-white transition-colors">Gestão Financeira</a></li>
+                        <li><a href="#servicos" class="hover:text-white transition-colors">Transformação Digital</a></li>
                     </ul>
                 </div>
-                <div class="footer-newsletter">
-                    <h4>Newsletter</h4>
-                    <p>Receba dicas e conteúdos exclusivos sobre gestão empresarial.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Seu e-mail">
-                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Receba dicas e conteúdos exclusivos sobre gestão empresarial.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu e-mail"
+                            class="flex-1 px-4 py-3 bg-white/10 border-none rounded-l-xl text-white placeholder-gray-400 focus:outline-none focus:bg-white/20 transition-colors">
+                        <button type="submit" class="px-4 py-3 gradient-bg rounded-r-xl hover:opacity-90 transition-opacity">
+                            <i class="fas fa-arrow-right text-white"></i>
+                        </button>
                     </form>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Gestão & Negócios. Todos os direitos reservados.</p>
+            <div class="border-t border-white/10 pt-8 text-center">
+                <p class="text-gray-400 text-sm">&copy; 2024 Gestão & Negócios. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Mobile menu toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        navToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = navToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                const icon = navToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // Form handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+            this.reset();
+        });
+
+        // Phone mask
+        const phoneInput = document.getElementById('telefone');
+        phoneInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 11) value = value.slice(0, 11);
+            if (value.length > 6) {
+                value = `(${value.slice(0,2)}) ${value.slice(2,7)}-${value.slice(7)}`;
+            } else if (value.length > 2) {
+                value = `(${value.slice(0,2)}) ${value.slice(2)}`;
+            } else if (value.length > 0) {
+                value = `(${value}`;
+            }
+            e.target.value = value;
+        });
+    </script>
 </body>
 </html>
