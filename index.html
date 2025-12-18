@@ -997,28 +997,51 @@
             }
         });
 
-        // Form handling with better UX
+        // Form handling - redirect to WhatsApp
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = this.querySelector('button[type="submit"]');
-            const originalText = btn.innerHTML;
 
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Enviando...';
+            // Get form values
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('telefone').value;
+            const empresa = document.getElementById('empresa').value;
+            const servico = document.getElementById('servico');
+            const servicoTexto = servico.options[servico.selectedIndex].text;
+            const mensagem = document.getElementById('mensagem').value;
+
+            // Build WhatsApp message
+            let whatsappMsg = `Olá! Vim pelo site da Gestão 360.\n\n`;
+            whatsappMsg += `*Nome:* ${nome}\n`;
+            whatsappMsg += `*E-mail:* ${email}\n`;
+            if (telefone) whatsappMsg += `*Telefone:* ${telefone}\n`;
+            if (empresa) whatsappMsg += `*Empresa:* ${empresa}\n`;
+            if (servico.value) whatsappMsg += `*Serviço de interesse:* ${servicoTexto}\n`;
+            if (mensagem) whatsappMsg += `\n*Mensagem:*\n${mensagem}`;
+
+            // Show loading
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Redirecionando...';
             btn.disabled = true;
 
+            // Redirect to WhatsApp
             setTimeout(() => {
+                const whatsappURL = `https://wa.me/5571992973639?text=${encodeURIComponent(whatsappMsg)}`;
+                window.open(whatsappURL, '_blank');
+
+                // Reset button and form
                 btn.innerHTML = '<i class="fas fa-check mr-2"></i>Enviado!';
                 btn.classList.remove('gradient-bg');
                 btn.classList.add('bg-green-500');
 
                 setTimeout(() => {
-                    btn.innerHTML = originalText;
+                    btn.innerHTML = 'Enviar Mensagem <i class="fas fa-paper-plane"></i>';
                     btn.disabled = false;
                     btn.classList.add('gradient-bg');
                     btn.classList.remove('bg-green-500');
                     this.reset();
                 }, 2000);
-            }, 1500);
+            }, 500);
         });
 
         // Phone mask
