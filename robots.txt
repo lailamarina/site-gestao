@@ -1,0 +1,22 @@
+# Robots.txt - Gestao Estrategica e Negocios 360
+# https://www.gestaoenegocios360.com.br
+
+User-agent: *
+Allow: /
+
+# Arquivos de SEO
+Sitemap: https://www.gestaoenegocios360.com.br/sitemap.xml
+
+# Bloquear pastas desnecessarias
+Disallow: /.git/
+
+# Permitir crawlers do Google
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Permitir Bing
+User-agent: Bingbot
+Allow: /
