@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapeamento de Clientes | Salvador e São Paulo</title>
+  <meta name="description" content="Mapeamento de 10 empresas em Salvador e 10 em São Paulo, com foco em produtos físicos e porte médio a alto." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f172a'/%3E%3Cpath d='M16 44V20h8l8 10 8-10h8v24h-8V32l-8 10-8-10v12z' fill='%23ffffff'/%3E%3C/svg%3E" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0f172a',
+            slate2: '#334155',
+            brand: '#0f766e',
+            brand2: '#b45309',
+            soft: '#f8fafc'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    ::selection { background: #cbd5e1; }
+  </style>
+</head>
+<body class="bg-slate-50 text-ink">
+  <header class="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wider text-brand">Mapeamento comercial</p>
+        <h1 class="text-xl font-semibold text-ink sm:text-2xl">Salvador e São Paulo</h1>
+      </div>
+      <div class="text-right text-xs text-slate2">
+        <div>Consulta pública em 28/05/2026</div>
+        <div>Faturamento: faixa estimada</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <section class="mb-6 grid gap-4 lg:grid-cols-[1.4fr_0.9fr]">
+      <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+        <p class="text-sm font-semibold uppercase tracking-wider text-brand2">Prospeção B2B</p>
+        <h2 class="mt-2 text-3xl font-semibold text-ink">Empresas de produtos físicos com sinal de porte médio a alto</h2>
+        <p class="mt-3 max-w-3xl text-sm leading-6 text-slate2">
+          Lista curada com 10 empresas em Salvador e 10 em São Paulo. Cada item traz endereço, canal de contato, categoria de produto e sinais públicos de escala para facilitar a abordagem comercial.
+        </p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div class="text-3xl font-semibold text-ink">20</div>
+          <div class="mt-1 text-sm text-slate2">empresas mapeadas</div>
+        </div>
+        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div class="text-3xl font-semibold text-ink">10 + 10</div>
+          <div class="mt-1 text-sm text-slate2">Salvador e São Paulo</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-6 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+      <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+        <div class="flex flex-wrap gap-2" aria-label="Filtros de cidade">
+          <button class="filter-btn rounded-full border border-slate-300 bg-ink px-4 py-2 text-sm font-medium text-white" data-city="all">Todas</button>
+          <button class="filter-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate2" data-city="Salvador">Salvador</button>
+          <button class="filter-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate2" data-city="São Paulo">São Paulo</button>
+        </div>
+        <div class="w-full lg:max-w-sm">
+          <label class="sr-only" for="search">Buscar empresa</label>
+          <input id="search" class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none ring-0 focus:border-brand" placeholder="Buscar por empresa, produto, endereço ou segmento" />
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="grid gap-4 md:grid-cols-2 xl:grid-cols-3"></section>
+  </main>
+
+  <script>
+    const companies = [
+      {
+        name: 'Atakarejo',
+        city: 'Salvador',
+        segment: 'Atacarejo / supermercados',
+        products: 'Alimentos, padaria, açougue, frios, bazar e marca própria',
+        band: 'Alto',
+        address: 'Rede com lojas em Salvador; primeira unidade inaugurada na cidade',
+        contact: '(71) 3460-8700',
+        website: 'https://atakarejo.com.br/',
+        publicSignals: 'Primeira loja em 1994; mix de mais de 10 mil itens; meta de estar entre as 10 maiores do Brasil; cerca de 7 mil empregos diretos.',
+        sources: [
+          { label: 'Nossa empresa', url: 'https://atakarejo.com.br/nossa-empresa/' },
+          { label: 'Lojas', url: 'https://atakarejo.com.br/nossas-lojas/' }
+        ]
+      },
+      {
+        name: 'Brascoco',
+        city: 'Salvador',
+        segment: 'Alimentos / coco e naturais',
+        products: 'Derivados de coco, produtos naturais, saudáveis e marca própria',
+        band: 'Médio-alto',
+        address: 'Rua da Etiópia, nº 10, Galpão 3, Granjas Rurais Presidente Vargas, Salvador-BA',
+        contact: '(71) 3215-2205',
+        website: 'https://brascoco.ind.br/',
+        publicSignals: 'Indústria 100% baiana; fábrica em Salvador desde 2018; terceiriza marca própria; atende com linha saudável e natural.',
+        sources: [
+          { label: 'A Brascoco', url: 'https://brascoco.ind.br/a-brascoco/' },
+          { label: 'Home', url: 'https://brascoco.ind.br/' }
+        ]
+      },
+      {
+        name: 'Confiance Ingredientes',
+        city: 'Salvador',
+        segment: 'Ingredientes para indústria',
+        products: 'Ingredientes para alimentos, nutrição animal e pet foods',
+        band: 'Médio-alto',
+        address: 'Avenida Luís Viana Filho, 13223, Hangar Business Park, Sala 722, São Cristóvão, Salvador-BA',
+        contact: '(71) 3041-3007',
+        website: 'https://www.confiance-ba.com.br/port/index_port.htm',
+        publicSignals: 'Atua desde 1994; depósito de 1.600 m² próximo ao porto de Salvador; atende todo o Brasil.',
+        sources: [
+          { label: 'Empresa', url: 'https://www.confiance-ba.com.br/port/empresa.htm' },
+          { label: 'Produtos', url: 'https://www.confiance-ba.com.br/port/produtos.htm' }
+        ]
+      },
+      {
+        name: 'ETEP Indústria Metalúrgica',
+        city: 'Salvador',
+        segment: 'Metalurgia / petróleo e gás',
+        products: 'Equipamentos e peças para exploração e produção de petróleo e gás',
+        band: 'Médio-alto',
+        address: 'Rua Martiniano Bonfim, 283, Retiro, Salvador-BA',
+        contact: '(71) 3381-1804',
+        website: 'https://www.etepindustria.com.br/site/pt/sobre-nos/',
+        publicSignals: 'Fundada em 1983; certificações API e ISO 9001; foco em equipamentos para E&P e presença internacional.',
+        sources: [
+          { label: 'Sobre nós', url: 'https://www.etepindustria.com.br/site/pt/sobre-nos/' },
+          { label: 'Contato', url: 'https://www.etepindustria.com.br/site/pt/fale-conosco/' }
+        ]
+      },
+      {
+        name: 'MMV Indústria',
+        city: 'Salvador',
+        segment: 'Higiene e saneantes',
+        products: 'Produtos saneantes e cosméticos para higiene hospitalar, têxtil, automotiva, pessoal e alimentícia',
+        band: 'Médio-alto',
+        address: 'R. Antônio Andrade, 137, Porto Seco Pirajá, Salvador-BA',
+        contact: '(71) 3392-7576',
+        website: 'https://www.mmvindustria.com.br/',
+        publicSignals: 'Atua desde 1999; portfólio com mais de 200 produtos; oito segmentos de atuação; foco em ANVISA e sustentabilidade.',
+        sources: [
+          { label: 'Home', url: 'https://www.mmvindustria.com.br/' },
+          { label: 'About', url: 'https://www.mmvindustria.com.br/about-us/' }
+        ]
+      },
+      {
+        name: 'Precisão Mecânica',
+        city: 'Salvador',
+        segment: 'Componentes industriais',
+        products: 'Componentes mecânicos, peças sob desenho, tratamento superficial e manutenção',
+        band: 'Médio-alto',
+        address: 'Rua do Nepal, Granjas Rurais Presidente Vargas, Salvador-BA',
+        contact: '(71) 3422-5500',
+        website: 'https://www.precisaomecanica.com.br/',
+        publicSignals: 'Mais de 35 anos de mercado; referência para offshore e petróleo; certificação ISO 9001; fabrica peças sob medida.',
+        sources: [
+          { label: 'Empresa', url: 'https://www.precisaomecanica.com.br/empresa' },
+          { label: 'Contato', url: 'https://www.precisaomecanica.com.br/contato' }
+        ]
+      },
+      {
+        name: 'Filadélfia Alimentos',
+        city: 'Salvador',
+        segment: 'Alimentos / condimentos',
+        products: 'Temperos, condimentos, especiarias, chás e naturais',
+        band: 'Médio',
+        address: 'Salvador-BA',
+        contact: '(71) 3391-1598',
+        website: 'https://www.filadelfiaalimentos.com/',
+        publicSignals: 'Mais de 30 anos no mercado baiano; atua em atacado e varejo; atende redes de pequeno, médio e grande porte na Bahia.',
+        sources: [
+          { label: 'Home', url: 'https://www.filadelfiaalimentos.com/' }
+        ]
+      },
+      {
+        name: 'KSP Alimentos',
+        city: 'Salvador',
+        segment: 'Frigorífico / distribuição',
+        products: 'Carnes, embutidos, bovinos, aves, suínos, carneiro e pescados',
+        band: 'Médio',
+        address: 'Rua Itapitanga, s/n, térreo, Cassange, Salvador-BA',
+        contact: '(71) 99969-9100',
+        website: 'https://kspalimentos.com.br/',
+        publicSignals: 'Fundada em 2019 no Curuzu; quer atender médio e grande varejo; desenvolve marca própria e distribuição multimarcas.',
+        sources: [
+          { label: 'Sobre', url: 'https://kspalimentos.com.br/sobre/' },
+          { label: 'Marca própria', url: 'https://kspalimentos.com.br/marca-propria/' }
+        ]
+      },
+      {
+        name: 'Eletrobahia',
+        city: 'Salvador',
+        segment: 'Materiais elétricos',
+        products: 'Cabos, luminárias, condutores, eletrodutos, automação e itens industriais',
+        band: 'Médio',
+        address: 'Rua Barão de Cotegipe, 112, Mares, Salvador-BA',
+        contact: '(71) 3019-2997',
+        website: 'https://www.eletrobahia.net.br/',
+        publicSignals: 'Loja física com estacionamento próprio; entrega em Salvador e Lauro de Freitas; atende do residencial ao industrial.',
+        sources: [
+          { label: 'Home', url: 'https://www.eletrobahia.net.br/' }
+        ]
+      },
+      {
+        name: 'Merco Pão',
+        city: 'Salvador',
+        segment: 'Panificação industrial',
+        products: 'Pães ultracongelados e soluções para panificação',
+        band: 'Médio',
+        address: 'Rua Itiúba, 190, Galpão 9, Caji, Lauro de Freitas-BA',
+        contact: '(71) 98643-0096',
+        website: 'https://www.mercopao.com/',
+        publicSignals: 'Desde 2013; frota refrigerada; foco em padronização, eficiência e redução de custos para estabelecimentos.',
+        sources: [
+          { label: 'Quem somos', url: 'https://www.mercopao.com/quem-somos' },
+          { label: 'Home', url: 'https://www.mercopao.com/' }
+        ]
+      },
+      {
+        name: 'Vivara',
+        city: 'São Paulo',
+        segment: 'Joias e relógios',
+        products: 'Joias, alianças, relógios, acessórios e marca Life by Vivara',
+        band: 'Alto',
+        address: 'Rua Verbo Divino, Chácara Santo Antonio, São Paulo-SP',
+        contact: 'Atendimento via site e canais corporativos',
+        website: 'https://www.vivara.com.br/',
+        publicSignals: '2024 com receita bruta de R$ 3,3 bi; mais de 457 lojas; 7 milhões de clientes cadastrados; origem em São Paulo.',
+        sources: [
+          { label: 'Perfil corporativo', url: 'https://ri.vivara.com.br/a-companhia/perfil-corporativo/' },
+          { label: 'Fale conosco', url: 'https://www.vivara.com.br/fale-conosco' }
+        ]
+      },
+      {
+        name: 'Kalunga',
+        city: 'São Paulo',
+        segment: 'Papelaria e escritório',
+        products: 'Papelaria, informática, material escolar, organização e marcas exclusivas',
+        band: 'Alto',
+        address: 'Rua da Mooca, 766, Mooca, São Paulo-SP',
+        contact: '(11) 3347-7000',
+        website: 'https://www.kalunga.com.br/',
+        publicSignals: 'Mais de 50 anos; 223 lojas físicas; maior varejista de suprimentos para escritório e material escolar no país.',
+        sources: [
+          { label: 'Lojas', url: 'https://www.kalunga.com.br/lojas/' },
+          { label: 'Desempenho', url: 'https://ri.kalunga.com.br/files/Comentario-de-Desempenho-1.pdf' }
+        ]
+      },
+      {
+        name: 'Tok&Stok',
+        city: 'São Paulo',
+        segment: 'Móveis e decoração',
+        products: 'Móveis, acessórios, objetos de decoração e itens para casa e escritório',
+        band: 'Médio-alto',
+        address: 'Avenida José Cesar de Oliveira, 21, Vila Leopoldina, São Paulo-SP',
+        contact: 'Atendimento via site e lojas',
+        website: 'https://www.tokstok.com.br/',
+        publicSignals: 'Mais de 40 anos no mercado; operação de milhares de itens; rede de lojas em São Paulo e e-commerce nacional.',
+        sources: [
+          { label: 'Sobre', url: 'https://www.tokstok.com.br/empresa/sobre-a-tokstok' },
+          { label: 'Privacidade', url: 'https://www.tokstok.com.br/empresa/politica-de-privacidade' }
+        ]
+      },
+      {
+        name: 'Polishop',
+        city: 'São Paulo',
+        segment: 'Eletroportáteis e utilidades',
+        products: 'Airfryers, panelas, beleza, fitness, limpeza e casa',
+        band: 'Alto',
+        address: 'São Paulo-SP',
+        contact: 'Atendimento pelo site e lojas',
+        website: 'https://www.polishop.com.br/',
+        publicSignals: 'Mais de 100 lojas; operação omnichannel; catálogo forte em produtos inovadores e venda por internet desde 2000.',
+        sources: [
+          { label: 'Quem somos', url: 'https://www.polishop.com.br/quem-somos' },
+          { label: 'Home', url: 'https://www.polishop.com.br/' }
+        ]
+      },
+      {
+        name: 'Preçolandia',
+        city: 'São Paulo',
+        segment: 'Utilidades domésticas',
+        products: 'Cozinha, cama, mesa, banho, decoração, organização e eletroportáteis',
+        band: 'Médio-alto',
+        address: 'Rua Cunha Gago, 370, Pinheiros, São Paulo-SP',
+        contact: 'Atendimento via site e lojas',
+        website: 'https://www.precolandia.com.br/',
+        publicSignals: 'Fundada em 1978 na Água Rasa; 50 lojas pelo Brasil; origem e forte presença na capital paulista.',
+        sources: [
+          { label: 'História', url: 'https://www.precolandia.com.br/historia' },
+          { label: 'Privacidade', url: 'https://www.precolandia.com.br/politica-de-privacidade' }
+        ]
+      },
+      {
+        name: 'Ri Happy',
+        city: 'São Paulo',
+        segment: 'Brinquedos e infantis',
+        products: 'Brinquedos, bebê, jogos, esportes, tecnologia e corporativo',
+        band: 'Médio-alto',
+        address: 'Cidade de São Paulo-SP',
+        contact: 'Atendimento e B2B via site',
+        website: 'https://www.rihappy.com.br/',
+        publicSignals: 'Posicionada como a maior loja de brinquedos do Brasil; venda para empresas; presença nacional com base administrativa em São Paulo.',
+        sources: [
+          { label: 'Site', url: 'https://www.rihappy.com.br/' },
+          { label: 'Empresas', url: 'https://www.rihappy.com.br/rihappy-para-empresas' }
+        ]
+      },
+      {
+        name: 'Dengo',
+        city: 'São Paulo',
+        segment: 'Chocolate premium',
+        products: 'Chocolates, presentes, café, kits e linha corporativa',
+        band: 'Médio-alto',
+        address: 'Rua Vigário Taques Bitencourt, 171, Santo Amaro, São Paulo-SP',
+        contact: '+55 11 97183-6890',
+        website: 'https://www.dengo.com.br/',
+        publicSignals: 'Marca brasileira de cacau e chocolate; loja-fábrica e vendas corporativas; foco em origem, impacto social e linhas premium.',
+        sources: [
+          { label: 'Nossas lojas', url: 'https://www.dengo.com.br/nossas-lojas' },
+          { label: 'Fábrica', url: 'https://www.dengo.com.br/fabrica-de-dengo' }
+        ]
+      },
+      {
+        name: 'Kopenhagen',
+        city: 'São Paulo',
+        segment: 'Chocolates finos',
+        products: 'Chocolates, trufas, presentes, clássicos e linhas premium',
+        band: 'Médio-alto',
+        address: 'São Paulo-SP',
+        contact: 'Atendimento via site',
+        website: 'https://www.kopenhagen.com.br/',
+        publicSignals: 'Mais de 95 anos; marca forte em presentes; portfólio de clássicos e linhas saudáveis; operação ligada ao Grupo CRM/Nestlé.',
+        sources: [
+          { label: 'Sobre', url: 'https://www.kopenhagen.com.br/sobre-a-kopenhagen' },
+          { label: 'Privacidade', url: 'https://www.kopenhagen.com.br/politica-de-privacidade' }
+        ]
+      },
+      {
+        name: 'Fast Shop',
+        city: 'São Paulo',
+        segment: 'Eletroeletrônicos',
+        products: 'Eletrodomésticos, eletrônicos, telefonia e informática',
+        band: 'Médio-alto',
+        address: 'Avenida Zaki Narchi, 1650, Carandiru, São Paulo-SP',
+        contact: '11 3003-3728',
+        website: 'https://secure3.fastshop.com.br/',
+        publicSignals: 'Multicanal com lojas físicas, site e suporte técnico; sede em São Paulo; operação histórica desde a década de 1970.',
+        sources: [
+          { label: 'Privacidade', url: 'https://fastshopwr-a.akamaihd.net/pdf/politica_de_privacidade.pdf' },
+          { label: 'Site', url: 'https://secure3.fastshop.com.br/' }
+        ]
+      },
+      {
+        name: 'Santa Lolla',
+        city: 'São Paulo',
+        segment: 'Calçados e acessórios',
+        products: 'Sapatos, bolsas e acessórios femininos',
+        band: 'Médio-alto',
+        address: 'Avenida Bem-Te-Vi, 43, Moema, São Paulo-SP',
+        contact: 'Relacionamento via site',
+        website: 'https://www.santalolla.com.br/',
+        publicSignals: 'Marca de moda com e-commerce e operação física; catálogo amplo de calçados e bolsas; sede em Moema.',
+        sources: [
+          { label: 'Contrato', url: 'https://www.santalolla.com.br/institucional/contrato-de-compra-e-venda' },
+          { label: 'Home', url: 'https://www.santalolla.com.br/' }
+        ]
+      }
+    ];
+
+    const state = { city: 'all', query: '' };
+
+    const results = document.getElementById('results');
+    const search = document.getElementById('search');
+    const buttons = [...document.querySelectorAll('.filter-btn')];
+
+    function normalize(value) {
+      return value
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+    }
+
+    function matches(company) {
+      const cityOk = state.city === 'all' || company.city === state.city;
+      const q = normalize(state.query);
+      if (!q) return cityOk;
+
+      const haystack = [
+        company.name,
+        company.city,
+        company.segment,
+        company.products,
+        company.address,
+        company.contact,
+        company.publicSignals,
+        company.band
+      ].map(normalize).join(' ');
+
+      return cityOk && haystack.includes(q);
+    }
+
+    function render() {
+      const visible = companies.filter(matches);
+      results.innerHTML = visible.map((company) => {
+        const sources = company.sources.map((source) => `
+          <a href="${source.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 rounded-full border border-slate-300 px-3 py-1 text-xs font-medium text-slate2 hover:border-brand hover:text-brand">
+            ${source.label}
+            <span aria-hidden="true">↗</span>
+          </a>
+        `).join('');
+
+        return `
+          <article class="flex h-full flex-col rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <h3 class="text-lg font-semibold text-ink">${company.name}</h3>
+                <p class="mt-1 text-sm text-slate2">${company.segment}</p>
+              </div>
+              <div class="flex flex-col items-end gap-2">
+                <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate2">${company.city}</span>
+                <span class="rounded-full ${company.band === 'Alto' ? 'bg-emerald-100 text-emerald-800' : company.band === 'Médio-alto' ? 'bg-amber-100 text-amber-800' : 'bg-sky-100 text-sky-800'} px-3 py-1 text-xs font-semibold">${company.band}</span>
+              </div>
+            </div>
+
+            <dl class="mt-4 space-y-3 text-sm">
+              <div>
+                <dt class="font-semibold text-ink">Produtos</dt>
+                <dd class="mt-1 text-slate2">${company.products}</dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-ink">Endereço / presença</dt>
+                <dd class="mt-1 text-slate2">${company.address}</dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-ink">Contato</dt>
+                <dd class="mt-1 text-slate2">${company.contact}</dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-ink">Sinais públicos</dt>
+                <dd class="mt-1 text-slate2">${company.publicSignals}</dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-ink">Site</dt>
+                <dd class="mt-1">
+                  <a href="${company.website}" target="_blank" rel="noopener noreferrer" class="text-brand hover:underline">${company.website.replace(/^https?:\/\//, '')}</a>
+                </dd>
+              </div>
+            </dl>
+
+            <div class="mt-5 border-t border-slate-200 pt-4">
+              <div class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate2">Fontes públicas</div>
+              <div class="flex flex-wrap gap-2">${sources}</div>
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      if (!visible.length) {
+        results.innerHTML = '<div class="rounded-xl border border-dashed border-slate-300 bg-white p-8 text-sm text-slate2">Nenhuma empresa encontrada com esses filtros.</div>';
+      }
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        state.city = button.dataset.city;
+        buttons.forEach((btn) => {
+          const active = btn === button;
+          btn.classList.toggle('bg-ink', active);
+          btn.classList.toggle('text-white', active);
+          btn.classList.toggle('bg-white', !active);
+          btn.classList.toggle('text-slate2', !active);
+        });
+        render();
+      });
+    });
+
+    search.addEventListener('input', (event) => {
+      state.query = event.target.value;
+      render();
+    });
+
+    render();
+  </script>
+</body>
+</html>

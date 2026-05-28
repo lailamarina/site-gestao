@@ -22,11 +22,11 @@ COPY sitemap.xml /usr/share/nginx/html/
 RUN chmod -R 755 /usr/share/nginx/html && \
     chown -R nginx:nginx /usr/share/nginx/html
 
-# Expor porta 24609
-EXPOSE 24609
+# Expor porta 24624
+EXPOSE 24624
 
 # Healthcheck
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-    CMD wget --no-verbose --tries=1 --spider http://localhost:24609/ || exit 1
+    CMD wget --no-verbose --tries=1 --spider http://localhost:24624/ || exit 1
 
 CMD ["nginx", "-g", "daemon off;"]
