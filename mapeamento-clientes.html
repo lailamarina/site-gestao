@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mapeamento de Clientes | Boutiques e Bijuterias</title>
-  <meta name="description" content="Mapeamento de boutiques locais com foco em bijuterias, semijoias, perfumes e acessórios, com Instagram e WhatsApp público quando disponível." />
+  <title>Mapeamento de Clientes | Boutiques, Acessórios, Capilares e Saúde</title>
+  <meta name="description" content="Mapeamento de empresas com e-commerce e loja física: bijuterias, semijoias, perfumaria, capilares, saúde e bem-estar. Excluídas grandes redes." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f172a'/%3E%3Cpath d='M16 44V20h8l8 10 8-10h8v24h-8V32l-8 10-8-10v12z' fill='%23ffffff'/%3E%3C/svg%3E" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -33,46 +33,63 @@
     <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
       <div>
         <p class="text-xs font-semibold uppercase tracking-wider text-brand">Mapeamento comercial</p>
-        <h1 class="text-xl font-semibold text-ink sm:text-2xl">Bijuterias, semijoias e perfumaria local</h1>
+        <h1 class="text-xl font-semibold text-ink sm:text-2xl">Empresas com e-commerce + loja física</h1>
       </div>
       <div class="text-right text-xs text-slate2">
-        <div>Consulta pública em 28/05/2026</div>
-        <div>Contato: Instagram e WhatsApp público</div>
+        <div>Atualizado em 28/05/2026</div>
+        <div>Excluídas: Natura, Eudora, Sephora, O Boticário, Mac</div>
       </div>
     </div>
   </header>
 
   <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+
+    <!-- Métricas -->
     <section class="mb-6 grid gap-4 lg:grid-cols-[1.4fr_0.9fr]">
       <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
         <p class="text-sm font-semibold uppercase tracking-wider text-brand2">Prospeção B2B</p>
-        <h2 class="mt-2 text-3xl font-semibold text-ink">Lojas menores, mais boutique, sem as redes gigantes</h2>
+        <h2 class="mt-2 text-3xl font-semibold text-ink">Marcas menores, sem as gigantes do varejo</h2>
         <p class="mt-3 max-w-3xl text-sm leading-6 text-slate2">
-          Lista curada com boutiques e quiosques em Salvador e São Paulo. Cada item traz endereço, Instagram e WhatsApp público quando consegui confirmar em fonte oficial.
+          Empresas com e-commerce próprio e presença física (lojas, quiosques, franquias em shoppings). Segmentos: perfumaria/ambiente, bijuterias, semijoias, capilares, saúde e bem-estar. Cada empresa aparece uma vez — se tiver 3 lojas em shoppings diferentes, é um CNPJ e um marketing só.
         </p>
       </div>
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
         <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-          <div class="text-3xl font-semibold text-ink">7</div>
-          <div class="mt-1 text-sm text-slate2">pontos de venda mapeados</div>
+          <div id="total-count" class="text-3xl font-semibold text-ink">—</div>
+          <div class="mt-1 text-sm text-slate2">empresas mapeadas</div>
         </div>
         <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-          <div class="text-3xl font-semibold text-ink">6 + 1</div>
-          <div class="mt-1 text-sm text-slate2">Salvador + São Paulo</div>
+          <div id="cat-count" class="text-3xl font-semibold text-ink">5</div>
+          <div class="mt-1 text-sm text-slate2">categorias</div>
         </div>
       </div>
     </section>
 
+    <!-- Filtros -->
     <section class="mb-6 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-      <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-        <div class="flex flex-wrap gap-2" aria-label="Filtros de cidade">
-          <button class="filter-btn rounded-full border border-slate-300 bg-ink px-4 py-2 text-sm font-medium text-white" data-city="all">Todas</button>
-          <button class="filter-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate2" data-city="Salvador">Salvador</button>
-          <button class="filter-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate2" data-city="São Paulo">São Paulo</button>
+      <div class="flex flex-col gap-4">
+        <!-- Filtro categoria -->
+        <div class="flex flex-wrap gap-2" aria-label="Filtros de categoria">
+          <button class="cat-btn rounded-full border border-slate-300 bg-ink px-4 py-2 text-sm font-medium text-white" data-cat="all">Todas as categorias</button>
+          <button class="cat-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate2" data-cat="Perfumaria e Ambiente">🌿 Perfumaria e Ambiente</button>
+          <button class="cat-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate2" data-cat="Bijuterias e Semijoias">💍 Bijuterias e Semijoias</button>
+          <button class="cat-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate2" data-cat="Cosméticos Capilares">💇 Cosméticos Capilares</button>
+          <button class="cat-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate2" data-cat="Saúde e Bem-Estar">🌱 Saúde e Bem-Estar</button>
+          <button class="cat-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate2" data-cat="Acessórios de Moda">👜 Acessórios de Moda</button>
         </div>
-        <div class="w-full lg:max-w-sm">
-          <label class="sr-only" for="search">Buscar empresa</label>
-          <input id="search" class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none ring-0 focus:border-brand" placeholder="Buscar por loja, marca, Instagram ou WhatsApp" />
+        <!-- Busca -->
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div class="flex flex-wrap gap-2" aria-label="Filtros de origem">
+            <button class="city-btn rounded-full border border-slate-300 bg-ink px-4 py-2 text-sm font-medium text-white" data-city="all">Todas as cidades</button>
+            <button class="city-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate2" data-city="Nacional">Nacional</button>
+            <button class="city-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate2" data-city="Salvador">Salvador</button>
+            <button class="city-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate2" data-city="São Paulo">São Paulo</button>
+            <button class="city-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate2" data-city="Rio de Janeiro">Rio de Janeiro</button>
+          </div>
+          <div class="w-full sm:max-w-sm">
+            <label class="sr-only" for="search">Buscar empresa</label>
+            <input id="search" class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none focus:border-brand" placeholder="Buscar por nome, segmento, produto…" />
+          </div>
         </div>
       </div>
     </section>
@@ -82,97 +99,169 @@
 
   <script>
     const companies = [
+
+      // ─── PERFUMARIA E AMBIENTE ───────────────────────────────────────────────
+
       {
-        name: 'Acqua Aroma - Salvador Shopping',
-        city: 'Salvador',
-        segment: 'Perfumaria e ambiente',
-        products: 'Difusores, sprays, perfumaria de ambiente e presentes',
+        name: 'Acqua Aroma',
+        city: 'Nacional',
+        category: 'Perfumaria e Ambiente',
+        segment: 'Aromas, difusores e presenteáveis',
+        products: 'Difusores de vareta, home spray, água perfumada, óleos essenciais, presentes',
         instagram: '@acquaaroma',
         whatsapp: 'https://wa.me/557133428042',
-        contact: '(71) 3342-8042',
-        address: 'Av. Tancredo Neves, 3133 - Salvador Shopping, Salvador-BA',
-        website: 'https://linktr.ee/acqua.aroma',
-        publicSignals: 'Boutique de aroma com presença em shopping premium e foco em presenteável.',
+        contact: '(71) 3342-8042 (Salvador Shopping)',
+        address: 'Lojas em shoppings de todo o Brasil (Salvador Shopping, Shopping Barra e outros)',
+        website: 'https://www.acquaaroma.com.br',
+        ecommerce: true,
+        publicSignals: 'Marca nacional de aromas com mais de 20 anos, e-commerce próprio e presença em shoppings. Uma empresa, múltiplas lojas — prospectar como marca única.',
         sources: [
-          { label: 'Instagram', url: 'https://instagram.com/acquaaroma' },
-          { label: 'Linktree', url: 'https://linktr.ee/acqua.aroma' }
+          { label: 'Site oficial', url: 'https://www.acquaaroma.com.br' },
+          { label: 'Instagram', url: 'https://instagram.com/acquaaroma' }
         ]
       },
       {
-        name: 'Acqua Aroma - Shopping Barra',
-        city: 'Salvador',
-        segment: 'Perfumaria e ambiente',
-        products: 'Difusores, sprays, perfumaria de ambiente e presentes',
-        instagram: '@acquaaroma',
-        whatsapp: 'https://wa.me/557130361112',
-        contact: '(71) 3036-1112',
-        address: 'Av. Centenário, 2992 - Shopping Barra, Salvador-BA',
-        website: 'https://linktr.ee/acqua.aroma',
-        publicSignals: 'Loja de aroma e presenteável com público de shopping de alto fluxo.',
+        name: 'Mahogany',
+        city: 'Nacional',
+        category: 'Perfumaria e Ambiente',
+        segment: 'Perfumaria e cosméticos premium',
+        products: 'Perfumes, cosméticos, velas, difusores, cremes e produtos de banho',
+        instagram: '@mahogany',
+        whatsapp: '',
+        contact: 'Via site',
+        address: 'Lojas em shoppings de todo o Brasil + e-commerce',
+        website: 'https://www.mahogany.com.br',
+        ecommerce: true,
+        publicSignals: 'Marca brasileira premium de perfumaria com forte apelo de presente. E-commerce robusto e lojas físicas em shoppings A.',
         sources: [
-          { label: 'Instagram', url: 'https://instagram.com/acquaaroma' },
-          { label: 'Linktree', url: 'https://linktr.ee/acqua.aroma' }
+          { label: 'Site oficial', url: 'https://www.mahogany.com.br' },
+          { label: 'Instagram', url: 'https://instagram.com/mahogany' }
         ]
       },
+      {
+        name: 'Granado Pharmácias',
+        city: 'Nacional',
+        category: 'Perfumaria e Ambiente',
+        segment: 'Perfumaria e farmácia clássica brasileira',
+        products: 'Perfumes, colônias, sabonetes, cremes, talcos, velas, difusores e kits presente',
+        instagram: '@granado',
+        whatsapp: '',
+        contact: 'Via site',
+        address: 'Lojas em shoppings premium (Iguatemi SP, entre outros) + e-commerce',
+        website: 'https://www.granado.com.br',
+        ecommerce: true,
+        publicSignals: 'Marca com mais de 160 anos, forte em presente e perfumaria. Abriu loja só de perfumaria no Iguatemi SP em 2025. Público ABC+.',
+        sources: [
+          { label: 'Site oficial', url: 'https://www.granado.com.br' },
+          { label: 'Instagram', url: 'https://instagram.com/granado' }
+        ]
+      },
+      {
+        name: 'Lenvie',
+        city: 'Nacional',
+        category: 'Perfumaria e Ambiente',
+        segment: 'Perfumaria de nicho e home fragrance',
+        products: 'Perfumes pessoais, home spray, difusores, velas, produtos para casa',
+        instagram: '@lenvie',
+        whatsapp: '',
+        contact: 'Via site',
+        address: 'E-commerce + presente em pontos multimarca; primeira loja física prevista',
+        website: 'https://www.lenvie.com.br',
+        ecommerce: true,
+        publicSignals: 'Fundada em 2011, referência em nicho brasileiro. Presente no México, Uruguai e Chile. Sem grandes redes concorrendo. Expansão em 2025/2026.',
+        sources: [
+          { label: 'Site oficial', url: 'https://www.lenvie.com.br' },
+          { label: 'Instagram', url: 'https://instagram.com/lenvie' }
+        ]
+      },
+      {
+        name: 'Becquer',
+        city: 'São Paulo',
+        category: 'Perfumaria e Ambiente',
+        segment: 'Perfumaria de nicho — produtos de casa e pessoais',
+        products: 'Difusores, velas, home spray, Eau de Parfum, roll-on',
+        instagram: '@becquerperfumaria',
+        whatsapp: '',
+        contact: 'Via Instagram',
+        address: '3 lojas em SP + 4ª prevista. E-commerce disponível.',
+        website: 'https://becquer.com.br',
+        ecommerce: true,
+        publicSignals: 'Marca jovem e crescente de nicho SP. Sem franquias, posicionamento autoral. Público que valoriza olfato como experiência.',
+        sources: [
+          { label: 'Site oficial', url: 'https://becquer.com.br' },
+          { label: 'Instagram', url: 'https://instagram.com/becquerperfumaria' }
+        ]
+      },
+
+      // ─── BIJUTERIAS E SEMIJOIAS ──────────────────────────────────────────────
+
       {
         name: 'Mix Bijú',
         city: 'Salvador',
-        segment: 'Bijuterias e acessórios',
+        category: 'Bijuterias e Semijoias',
+        segment: 'Bijuterias e acessórios femininos',
         products: 'Bijuterias, bolsas e acessórios femininos',
         instagram: '@sigamixbiju',
         whatsapp: 'https://wa.me/5571983435029',
         contact: '(71) 98343-5029',
         address: 'Salvador-BA',
-        website: 'https://www.sigamixbiju.com.br/',
-        publicSignals: 'Atua há anos no varejo de bijuterias e acessórios com atendimento direto via WhatsApp.',
+        website: 'https://www.sigamixbiju.com.br',
+        ecommerce: true,
+        publicSignals: 'Atua há anos no varejo de bijuterias em Salvador com atendimento direto via WhatsApp e loja virtual.',
         sources: [
           { label: 'Instagram', url: 'https://instagram.com/sigamixbiju' },
-          { label: 'Loja', url: 'https://www.sigamixbiju.com.br/pagina/sobre-a-loja.html' }
+          { label: 'Loja', url: 'https://www.sigamixbiju.com.br' }
         ]
       },
       {
         name: 'Le Brun Boutique',
         city: 'Salvador',
-        segment: 'Bijuterias artesanais',
-        products: 'Bijuterias artesanais, exclusivas e peças de presente',
+        category: 'Bijuterias e Semijoias',
+        segment: 'Bijuterias artesanais exclusivas',
+        products: 'Bijuterias artesanais, peças exclusivas e presentes',
         instagram: '@lebrun.boutique',
         whatsapp: 'https://wa.me/5571992917404',
         contact: '(71) 99291-7404',
         address: 'Salvador-BA',
-        website: 'https://www.lebrunboutique.com/',
-        publicSignals: 'Boutique artesanal com foco em peças exclusivas e atendimento por WhatsApp.',
+        website: 'https://www.lebrunboutique.com',
+        ecommerce: true,
+        publicSignals: 'Boutique artesanal com foco em peças exclusivas. Atendimento personalizado por WhatsApp.',
         sources: [
           { label: 'Instagram', url: 'https://www.instagram.com/lebrun.boutique/' },
-          { label: 'Site', url: 'https://www.lebrunboutique.com/' }
+          { label: 'Site', url: 'https://www.lebrunboutique.com' }
         ]
       },
       {
         name: 'FINGER Acessórios',
         city: 'Salvador',
-        segment: 'Bijuterias e acessórios',
+        category: 'Bijuterias e Semijoias',
+        segment: 'Bijuterias e acessórios femininos',
         products: 'Bijuterias, bolsas e acessórios femininos',
         instagram: '@fingeracessorios',
         whatsapp: 'https://wa.me/557133512319',
         contact: '(71) 3351-2319',
-        address: 'Av. Antônio Carlos Magalhães, 1034 - Pituba Parque Center, Salvador-BA',
+        address: 'Av. Antônio Carlos Magalhães, 1034 — Pituba Parque Center, Salvador-BA',
         website: 'https://www.tricenter.com.br/lojas/finger-acessorios/',
-        publicSignals: 'Loja de acessórios femininos com fluxo de shopping e atendimento por mensagem.',
+        ecommerce: false,
+        publicSignals: 'Loja de acessórios femininos em shopping de Salvador com bom fluxo.',
         sources: [
           { label: 'Instagram', url: 'https://www.instagram.com/fingeracessorios/' },
           { label: 'Loja', url: 'https://www.tricenter.com.br/lojas/finger-acessorios/' }
         ]
       },
       {
-        name: 'Acium - Shopping Barra',
+        name: 'Acium',
         city: 'Salvador',
-        segment: 'Semi joias e acessórios',
+        category: 'Bijuterias e Semijoias',
+        segment: 'Semijoias e acessórios',
         products: 'Semijoias, alianças, acessórios e presentes',
         instagram: '@aciumbrazil',
         whatsapp: 'https://wa.me/5571982773391',
-        contact: '(71) 2108-8288',
+        contact: '(71) 98277-3391',
         address: 'Shopping Barra, Salvador-BA',
         website: 'https://shoppingbarra.com/loja/acium/',
-        publicSignals: 'Boutique de semijoias em shopping com contato direto por WhatsApp.',
+        ecommerce: false,
+        publicSignals: 'Boutique de semijoias no Shopping Barra (Salvador) com contato direto por WhatsApp.',
         sources: [
           { label: 'Instagram', url: 'https://instagram.com/aciumbrazil' },
           { label: 'Loja', url: 'https://shoppingbarra.com/loja/acium/' }
@@ -181,75 +270,376 @@
       {
         name: 'VIKA',
         city: 'São Paulo',
+        category: 'Bijuterias e Semijoias',
         segment: 'Semijoias',
         products: 'Semijoias, peças exclusivas e acessórios',
         instagram: '@VIKALOJA',
         whatsapp: 'https://wa.me/5511992031868',
         contact: '+55 11 99203-1868',
         address: 'São Paulo-SP',
-        website: 'https://vika.com.br/',
-        publicSignals: 'Marca boutique com venda direta via WhatsApp e Instagram próprio.',
+        website: 'https://vika.com.br',
+        ecommerce: true,
+        publicSignals: 'Marca boutique SP com venda direta via WhatsApp e e-commerce próprio.',
         sources: [
           { label: 'Instagram', url: 'https://instagram.com/VIKALOJA' },
-          { label: 'Site', url: 'https://vika.com.br/' }
+          { label: 'Site', url: 'https://vika.com.br' }
+        ]
+      },
+      {
+        name: 'Morana',
+        city: 'Nacional',
+        category: 'Bijuterias e Semijoias',
+        segment: 'Bijuterias e acessórios femininos — rede nacional',
+        products: 'Brincos, colares, pulseiras, anéis, bolsas, acessórios para cabelo',
+        instagram: '@morana',
+        whatsapp: '',
+        contact: 'Via site',
+        address: 'Mais de 300 lojas no Brasil (shoppings). Presença em PT, EUA e ES.',
+        website: 'https://www.morana.com.br',
+        ecommerce: true,
+        publicSignals: 'Uma das maiores redes de acessórios do Brasil. Um só marketing/CNPJ por rede. Boa presença digital e público feminino amplo.',
+        sources: [
+          { label: 'Site oficial', url: 'https://www.morana.com.br' },
+          { label: 'Instagram', url: 'https://instagram.com/morana' }
+        ]
+      },
+      {
+        name: 'Rommanel',
+        city: 'Nacional',
+        category: 'Bijuterias e Semijoias',
+        segment: 'Semijoias folheadas — rede nacional',
+        products: 'Joias folheadas a ouro 18k, prata 925, alianças, anéis, colares, brincos',
+        instagram: '@rommanel',
+        whatsapp: '',
+        contact: 'Via site',
+        address: '324+ lojas no Brasil + e-commerce + revendedoras',
+        website: 'https://www.rommanel.com.br',
+        ecommerce: true,
+        publicSignals: 'Líder absoluto em semijoias no Brasil desde 1986. 1,7 mi de revendedoras ativas. Garantia permanente nas peças. Expansão para América Latina.',
+        sources: [
+          { label: 'Site oficial', url: 'https://www.rommanel.com.br' },
+          { label: 'Instagram', url: 'https://instagram.com/rommanel' }
+        ]
+      },
+      {
+        name: 'Mapa da Mina Acessórios',
+        city: 'Nacional',
+        category: 'Bijuterias e Semijoias',
+        segment: 'Semijoias — rede de franquias',
+        products: 'Semijoias com produção própria, coleções sazonais',
+        instagram: '@mapadaminaacessorios',
+        whatsapp: '',
+        contact: 'Via site',
+        address: 'Franquias em shoppings (loja e quiosque)',
+        website: 'https://mapadaminaacessorios.com.br',
+        ecommerce: true,
+        publicSignals: 'Franquia de semijoias com produção própria e calendário forte de lançamentos. Modelo loja e quiosque. Boa presença em shoppings regionais.',
+        sources: [
+          { label: 'Site oficial', url: 'https://mapadaminaacessorios.com.br' },
+          { label: 'Instagram', url: 'https://instagram.com/mapadaminaacessorios' }
+        ]
+      },
+      {
+        name: 'TOTTA',
+        city: 'Rio de Janeiro',
+        category: 'Bijuterias e Semijoias',
+        segment: 'Acessórios artesanais autorais — nicho',
+        products: 'Peças feitas à mão, metais, pedras, maxi bijoux, estética solar/carioca',
+        instagram: '@totta',
+        whatsapp: '',
+        contact: 'Via Instagram',
+        address: 'Lojas em Cidade Jardim (SP), Village Mall e Rio Design Leblon (RJ)',
+        website: 'https://totta.com.br',
+        ecommerce: true,
+        publicSignals: 'Posicionamento de luxo acessível. Peças autorais da Manu Bragança. Presença em shoppings A+ no RJ e SP. Forte estética de marca.',
+        sources: [
+          { label: 'Site oficial', url: 'https://totta.com.br' },
+          { label: 'Instagram', url: 'https://instagram.com/totta' }
+        ]
+      },
+
+      // ─── COSMÉTICOS CAPILARES ────────────────────────────────────────────────
+
+      {
+        name: 'Forever Liss',
+        city: 'Nacional',
+        category: 'Cosméticos Capilares',
+        segment: 'Cosméticos capilares — marca D2C',
+        products: 'Shampoos, condicionadores, máscaras, leave-ins, protetores térmicos, óleos (Banho de Verniz, Desmaia Cabelo)',
+        instagram: '@foreverliss',
+        whatsapp: '',
+        contact: 'Via site',
+        address: 'E-commerce próprio + distribuidores e multimarcas em todo Brasil',
+        website: 'https://www.foreverliss.com.br',
+        ecommerce: true,
+        publicSignals: 'Marca D2C forte, sucesso em redes sociais. Sem lojas físicas próprias mas presente em farmácias e salões. Boa faixa de preço para presenteável.',
+        sources: [
+          { label: 'Site oficial', url: 'https://www.foreverliss.com.br' },
+          { label: 'Instagram', url: 'https://instagram.com/foreverliss' }
+        ]
+      },
+      {
+        name: 'Lola Cosmetics',
+        city: 'Nacional',
+        category: 'Cosméticos Capilares',
+        segment: 'Cosméticos capilares — foco em cachos',
+        products: 'Shampoos, condicionadores, máscaras, cremes de pentear para cacheadas e crespas',
+        instagram: '@lolacosmetics',
+        whatsapp: '',
+        contact: 'Via site',
+        address: 'E-commerce + lojas físicas + distribuição nacional',
+        website: 'https://www.lolacosmetics.com.br',
+        ecommerce: true,
+        publicSignals: 'Referência no movimento de cachos. Público fiel e engajado. Distribuição ampla em farmácias e e-commerce. Forte identidade visual.',
+        sources: [
+          { label: 'Site oficial', url: 'https://www.lolacosmetics.com.br' },
+          { label: 'Instagram', url: 'https://instagram.com/lolacosmetics' }
+        ]
+      },
+      {
+        name: 'Apice Cosméticos',
+        city: 'Nacional',
+        category: 'Cosméticos Capilares',
+        segment: 'Cosméticos naturais — No Poo e Low Poo',
+        products: 'Shampoos, condicionadores e máscaras para técnicas No Poo, Low Poo e cabelos cacheados',
+        instagram: '@apicecosmeticos',
+        whatsapp: '',
+        contact: 'Via site',
+        address: 'E-commerce oficial + revendedores',
+        website: 'https://www.apicecosmeticos.com.br',
+        ecommerce: true,
+        publicSignals: 'Especialista em No/Low Poo. Público nicho mas muito engajado. Marca antes chamada Apse. Forte no digital.',
+        sources: [
+          { label: 'Site oficial', url: 'https://www.apicecosmeticos.com.br' },
+          { label: 'Instagram', url: 'https://instagram.com/apicecosmeticos' }
+        ]
+      },
+      {
+        name: 'Haskell',
+        city: 'Nacional',
+        category: 'Cosméticos Capilares',
+        segment: 'Cosméticos capilares profissionais',
+        products: 'Shampoos, condicionadores, máscaras e tratamentos profissionais',
+        instagram: '@haskellcosmeticos',
+        whatsapp: '',
+        contact: 'Via site',
+        address: 'E-commerce + salões + distribuidores nacionais',
+        website: 'https://www.haskell.com.br',
+        ecommerce: true,
+        publicSignals: 'Marca profissional com presença crescente no varejo. Boa reputação entre cabeleireiros. Linha ampla para todos os tipos de cabelo.',
+        sources: [
+          { label: 'Site oficial', url: 'https://www.haskell.com.br' },
+          { label: 'Instagram', url: 'https://instagram.com/haskellcosmeticos' }
+        ]
+      },
+      {
+        name: 'Felps',
+        city: 'Nacional',
+        category: 'Cosméticos Capilares',
+        segment: 'Cosméticos capilares profissionais',
+        products: 'Progressivas, shampoos, máscaras, tratamentos e cosméticos profissionais',
+        instagram: '@felps_cosmeticos',
+        whatsapp: '',
+        contact: 'Via site',
+        address: 'E-commerce + distribuição nacional em salões e lojas',
+        website: 'https://www.felps.com.br',
+        ecommerce: true,
+        publicSignals: 'Referência em progressivas e tratamentos. Forte no segmento profissional. Vendas B2B para salões e B2C via e-commerce.',
+        sources: [
+          { label: 'Site oficial', url: 'https://www.felps.com.br' },
+          { label: 'Instagram', url: 'https://instagram.com/felps_cosmeticos' }
+        ]
+      },
+
+      // ─── SAÚDE E BEM-ESTAR ───────────────────────────────────────────────────
+
+      {
+        name: 'Mundo Verde',
+        city: 'Nacional',
+        category: 'Saúde e Bem-Estar',
+        segment: 'Produtos naturais, orgânicos e suplementos — rede de franquias',
+        products: 'Alimentos orgânicos e funcionais, suplementos, vitaminas, fitoterápicos, chás, cosméticos naturais, a granel',
+        instagram: '@mundoverde',
+        whatsapp: '',
+        contact: 'Via site',
+        address: '400+ lojas franqueadas em todo o Brasil + e-commerce',
+        website: 'https://www.mundoverde.com.br',
+        ecommerce: true,
+        publicSignals: 'Maior rede de produtos naturais da América Latina. Fundada em 1987. 5.000+ produtos, 1.200+ fornecedores. Público saúde consciente e ABC+. Um marketing, muitas lojas.',
+        sources: [
+          { label: 'Site oficial', url: 'https://www.mundoverde.com.br' },
+          { label: 'Instagram', url: 'https://instagram.com/mundoverde' }
+        ]
+      },
+      {
+        name: 'Bio Mundo',
+        city: 'Nacional',
+        category: 'Saúde e Bem-Estar',
+        segment: 'Produtos naturais e nutrição esportiva — franquia',
+        products: 'Alimentos sem glúten, sem lactose, integrais, orgânicos, a granel, suplementos, congelados, chás',
+        instagram: '@biomundo',
+        whatsapp: '',
+        contact: 'Via site',
+        address: 'Franquias em shoppings e ruas comerciais em todo o Brasil',
+        website: 'https://www.biomundo.com.br',
+        ecommerce: true,
+        publicSignals: 'Alternativa ao Mundo Verde, forte em nutrição esportiva e produtos a granel. Boa margem de expansão em 2025.',
+        sources: [
+          { label: 'Site oficial', url: 'https://www.biomundo.com.br' },
+          { label: 'Instagram', url: 'https://instagram.com/biomundo' }
+        ]
+      },
+      {
+        name: 'D-Vitaminas',
+        city: 'Nacional',
+        category: 'Saúde e Bem-Estar',
+        segment: 'Suplementos e vitaminas — franquia compacta',
+        products: 'Suplementos, vitaminas, minerais e acessórios esportivos',
+        instagram: '@dvitaminas',
+        whatsapp: '',
+        contact: 'Via site',
+        address: 'Lojas em shoppings, academias e ruas. Formato compacto.',
+        website: 'https://www.dvitaminas.com.br',
+        ecommerce: true,
+        publicSignals: 'Rede de franquias com faturamento médio de R$ 80k/mês. Ponto em academia ou shopping compacto. Público fitness.',
+        sources: [
+          { label: 'Site oficial', url: 'https://www.dvitaminas.com.br' },
+          { label: 'Instagram', url: 'https://instagram.com/dvitaminas' }
+        ]
+      },
+      {
+        name: 'The Vitamin Point',
+        city: 'Nacional',
+        category: 'Saúde e Bem-Estar',
+        segment: 'Vitaminas e minerais importados — quiosque em shopping',
+        products: 'Vitaminas, minerais e suplementos alimentares importados dos EUA',
+        instagram: '@thevitaminpoint',
+        whatsapp: '',
+        contact: 'Via site',
+        address: 'Formato quiosque em shoppings de todo Brasil',
+        website: 'https://thevitaminpoint.com.br',
+        ecommerce: true,
+        publicSignals: 'Posicionamento premium com produtos importados. Quiosques em shoppings classe A/B. Público diferenciado.',
+        sources: [
+          { label: 'Site oficial', url: 'https://thevitaminpoint.com.br' },
+          { label: 'Instagram', url: 'https://instagram.com/thevitaminpoint' }
+        ]
+      },
+
+      // ─── ACESSÓRIOS DE MODA ──────────────────────────────────────────────────
+
+      {
+        name: 'Pakera Pakera',
+        city: 'Nacional',
+        category: 'Acessórios de Moda',
+        segment: 'Bijuterias e acessórios sustentáveis — marca autoral',
+        products: 'Peças em metais sustentáveis e pedras recicladas, lapidadas artesanalmente',
+        instagram: '@pakerapakera',
+        whatsapp: '',
+        contact: 'Via Instagram',
+        address: 'E-commerce + pontos multimarca',
+        website: 'https://pakerapakera.com.br',
+        ecommerce: true,
+        publicSignals: 'Marca jovem, cool e sustentável. Peças artesanais com apelo lifestyle. Forte no Instagram e entre público de moda autoral.',
+        sources: [
+          { label: 'Site oficial', url: 'https://pakerapakera.com.br' },
+          { label: 'Instagram', url: 'https://instagram.com/pakerapakera' }
+        ]
+      },
+      {
+        name: 'Lool',
+        city: 'Nacional',
+        category: 'Acessórios de Moda',
+        segment: 'Maxi bijoux — luxo acessível',
+        products: 'Maxi bijoux, acessórios de alto impacto estético',
+        instagram: '@loolbijoux',
+        whatsapp: '',
+        contact: 'Via site',
+        address: 'E-commerce + Farfetch, OQVestir, Shop2gether, Gallerist',
+        website: 'https://lool.com.br',
+        ecommerce: true,
+        publicSignals: 'Presente em marketplaces premium. Público fashion com poder aquisitivo. Peças de alto impacto visual — ideal para presenteável de qualidade.',
+        sources: [
+          { label: 'Site oficial', url: 'https://lool.com.br' },
+          { label: 'Instagram', url: 'https://instagram.com/loolbijoux' }
         ]
       }
     ];
 
-    const state = { city: 'all', query: '' };
+    const state = { city: 'all', cat: 'all', query: '' };
 
     const results = document.getElementById('results');
     const search = document.getElementById('search');
-    const buttons = [...document.querySelectorAll('.filter-btn')];
+    const cityButtons = [...document.querySelectorAll('.city-btn')];
+    const catButtons = [...document.querySelectorAll('.cat-btn')];
+
+    document.getElementById('total-count').textContent = companies.length;
 
     function normalize(value) {
-      return value
-        .toLowerCase()
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '');
+      if (!value) return '';
+      return value.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
     }
 
     function matches(company) {
       const cityOk = state.city === 'all' || company.city === state.city;
+      const catOk = state.cat === 'all' || company.category === state.cat;
       const q = normalize(state.query);
-      if (!q) return cityOk;
+      if (!q) return cityOk && catOk;
 
       const haystack = [
-        company.name,
-        company.city,
-        company.segment,
-        company.products,
-        company.instagram,
-        company.contact,
-        company.address,
-        company.publicSignals,
-        company.band,
-        company.website
+        company.name, company.city, company.category, company.segment,
+        company.products, company.instagram, company.contact,
+        company.address, company.publicSignals, company.website
       ].map(normalize).join(' ');
 
-      return cityOk && haystack.includes(q);
+      return cityOk && catOk && haystack.includes(q);
     }
+
+    const categoryColors = {
+      'Perfumaria e Ambiente':  'bg-emerald-100 text-emerald-800',
+      'Bijuterias e Semijoias': 'bg-amber-100 text-amber-800',
+      'Cosméticos Capilares':   'bg-pink-100 text-pink-800',
+      'Saúde e Bem-Estar':      'bg-teal-100 text-teal-800',
+      'Acessórios de Moda':     'bg-violet-100 text-violet-800',
+    };
 
     function render() {
       const visible = companies.filter(matches);
+      document.getElementById('total-count').textContent = visible.length + ' / ' + companies.length;
+
+      if (!visible.length) {
+        results.innerHTML = '<div class="col-span-3 rounded-xl border border-dashed border-slate-300 bg-white p-8 text-sm text-slate2">Nenhuma empresa encontrada com esses filtros.</div>';
+        return;
+      }
+
       results.innerHTML = visible.map((company) => {
         const sources = company.sources.map((source) => `
-          <a href="${source.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 rounded-full border border-slate-300 px-3 py-1 text-xs font-medium text-slate2 hover:border-brand hover:text-brand">
-            ${source.label}
-            <span aria-hidden="true">↗</span>
+          <a href="${source.url}" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-1 rounded-full border border-slate-300 px-3 py-1 text-xs font-medium text-slate2 hover:border-brand hover:text-brand">
+            ${source.label} <span aria-hidden="true">↗</span>
           </a>
         `).join('');
+
+        const catColor = categoryColors[company.category] || 'bg-slate-100 text-slate-700';
+        const ecommerceTag = company.ecommerce
+          ? '<span class="rounded-full bg-green-100 px-2 py-0.5 text-xs font-semibold text-green-800">E-commerce ✓</span>'
+          : '<span class="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate2">Só física</span>';
+
+        const whatsappHtml = company.whatsapp
+          ? `<a class="text-brand hover:underline" href="${company.whatsapp}" target="_blank" rel="noopener noreferrer">${company.contact}</a>`
+          : `<span class="text-slate2">${company.contact || '—'}</span>`;
 
         return `
           <article class="flex h-full flex-col rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
             <div class="flex items-start justify-between gap-3">
-              <div>
-                <h3 class="text-lg font-semibold text-ink">${company.name}</h3>
-                <p class="mt-1 text-sm text-slate2">${company.segment}</p>
+              <div class="flex-1 min-w-0">
+                <h3 class="truncate text-lg font-semibold text-ink">${company.name}</h3>
+                <p class="mt-0.5 text-sm text-slate2">${company.segment}</p>
               </div>
-              <div class="flex flex-col items-end gap-2">
+              <div class="flex flex-col items-end gap-1.5 shrink-0">
                 <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate2">${company.city}</span>
-                <span class="rounded-full ${company.band === 'Alto' ? 'bg-emerald-100 text-emerald-800' : company.band === 'Médio-alto' ? 'bg-amber-100 text-amber-800' : 'bg-sky-100 text-sky-800'} px-3 py-1 text-xs font-semibold">${company.band || 'Boutique'}</span>
+                <span class="rounded-full ${catColor} px-3 py-1 text-xs font-semibold">${company.category}</span>
+                ${ecommerceTag}
               </div>
             </div>
 
@@ -259,7 +649,7 @@
                 <dd class="mt-1 text-slate2">${company.products}</dd>
               </div>
               <div>
-                <dt class="font-semibold text-ink">Endereço / presença</dt>
+                <dt class="font-semibold text-ink">Presença</dt>
                 <dd class="mt-1 text-slate2">${company.address}</dd>
               </div>
               <div>
@@ -267,17 +657,18 @@
                 <dd class="mt-1 text-slate2">${company.instagram}</dd>
               </div>
               <div>
-                <dt class="font-semibold text-ink">WhatsApp</dt>
-                <dd class="mt-1 text-slate2"><a class="text-brand hover:underline" href="${company.whatsapp}" target="_blank" rel="noopener noreferrer">${company.contact}</a></dd>
+                <dt class="font-semibold text-ink">Contato</dt>
+                <dd class="mt-1">${whatsappHtml}</dd>
               </div>
               <div>
-                <dt class="font-semibold text-ink">Sinais públicos</dt>
+                <dt class="font-semibold text-ink">Por que prospectar</dt>
                 <dd class="mt-1 text-slate2">${company.publicSignals}</dd>
               </div>
               <div>
                 <dt class="font-semibold text-ink">Site</dt>
                 <dd class="mt-1">
-                  <a href="${company.website}" target="_blank" rel="noopener noreferrer" class="text-brand hover:underline">${company.website.replace(/^https?:\/\//, '')}</a>
+                  <a href="${company.website}" target="_blank" rel="noopener noreferrer"
+                     class="text-brand hover:underline">${company.website.replace(/^https?:\/\//, '')}</a>
                 </dd>
               </div>
             </dl>
@@ -289,28 +680,36 @@
           </article>
         `;
       }).join('');
-
-      if (!visible.length) {
-        results.innerHTML = '<div class="rounded-xl border border-dashed border-slate-300 bg-white p-8 text-sm text-slate2">Nenhuma empresa encontrada com esses filtros.</div>';
-      }
     }
 
-    buttons.forEach((button) => {
-      button.addEventListener('click', () => {
-        state.city = button.dataset.city;
-        buttons.forEach((btn) => {
-          const active = btn === button;
-          btn.classList.toggle('bg-ink', active);
-          btn.classList.toggle('text-white', active);
-          btn.classList.toggle('bg-white', !active);
-          btn.classList.toggle('text-slate2', !active);
-        });
+    function setActive(buttons, activeBtn) {
+      buttons.forEach((btn) => {
+        const active = btn === activeBtn;
+        btn.classList.toggle('bg-ink', active);
+        btn.classList.toggle('text-white', active);
+        btn.classList.toggle('bg-white', !active);
+        btn.classList.toggle('text-slate2', !active);
+      });
+    }
+
+    cityButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        state.city = btn.dataset.city;
+        setActive(cityButtons, btn);
         render();
       });
     });
 
-    search.addEventListener('input', (event) => {
-      state.query = event.target.value;
+    catButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        state.cat = btn.dataset.cat;
+        setActive(catButtons, btn);
+        render();
+      });
+    });
+
+    search.addEventListener('input', (e) => {
+      state.query = e.target.value;
       render();
     });
 
