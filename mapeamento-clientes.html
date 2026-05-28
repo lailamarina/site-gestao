@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mapeamento de Clientes | Salvador e São Paulo</title>
-  <meta name="description" content="Mapeamento de 10 empresas em Salvador e 10 em São Paulo, com foco em produtos físicos e porte médio a alto." />
+  <title>Mapeamento de Clientes | Beleza e Perfumaria</title>
+  <meta name="description" content="Mapeamento de 10 pontos de venda em Salvador e 10 em São Paulo, com foco em cabelo, perfume, pele e essências." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f172a'/%3E%3Cpath d='M16 44V20h8l8 10 8-10h8v24h-8V32l-8 10-8-10v12z' fill='%23ffffff'/%3E%3C/svg%3E" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -33,11 +33,11 @@
     <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
       <div>
         <p class="text-xs font-semibold uppercase tracking-wider text-brand">Mapeamento comercial</p>
-        <h1 class="text-xl font-semibold text-ink sm:text-2xl">Salvador e São Paulo</h1>
+        <h1 class="text-xl font-semibold text-ink sm:text-2xl">Beleza, cabelo, perfume e pele</h1>
       </div>
       <div class="text-right text-xs text-slate2">
         <div>Consulta pública em 28/05/2026</div>
-        <div>Faturamento: faixa estimada</div>
+        <div>Porte: estimado por presença pública</div>
       </div>
     </div>
   </header>
@@ -46,19 +46,19 @@
     <section class="mb-6 grid gap-4 lg:grid-cols-[1.4fr_0.9fr]">
       <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
         <p class="text-sm font-semibold uppercase tracking-wider text-brand2">Prospeção B2B</p>
-        <h2 class="mt-2 text-3xl font-semibold text-ink">Empresas de produtos físicos com sinal de porte médio a alto</h2>
+        <h2 class="mt-2 text-3xl font-semibold text-ink">Lojas e marcas de beleza com presença em Salvador e São Paulo</h2>
         <p class="mt-3 max-w-3xl text-sm leading-6 text-slate2">
-          Lista curada com 10 empresas em Salvador e 10 em São Paulo. Cada item traz endereço, canal de contato, categoria de produto e sinais públicos de escala para facilitar a abordagem comercial.
+          Lista curada com 10 pontos em Salvador e 10 em São Paulo. Cada item traz endereço, canal de contato, categoria de produto e sinais públicos de escala para facilitar a abordagem comercial.
         </p>
       </div>
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
         <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-          <div class="text-3xl font-semibold text-ink">20</div>
-          <div class="mt-1 text-sm text-slate2">empresas mapeadas</div>
+        <div class="text-3xl font-semibold text-ink">20</div>
+          <div class="mt-1 text-sm text-slate2">pontos de venda mapeados</div>
         </div>
         <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
           <div class="text-3xl font-semibold text-ink">10 + 10</div>
-          <div class="mt-1 text-sm text-slate2">Salvador e São Paulo</div>
+          <div class="mt-1 text-sm text-slate2">10 Salvador + 10 São Paulo</div>
         </div>
       </div>
     </section>
@@ -72,7 +72,7 @@
         </div>
         <div class="w-full lg:max-w-sm">
           <label class="sr-only" for="search">Buscar empresa</label>
-          <input id="search" class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none ring-0 focus:border-brand" placeholder="Buscar por empresa, produto, endereço ou segmento" />
+          <input id="search" class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none ring-0 focus:border-brand" placeholder="Buscar por loja, marca, produto, endereço ou segmento" />
         </div>
       </div>
     </section>
@@ -83,301 +83,287 @@
   <script>
     const companies = [
       {
-        name: 'Atakarejo',
+        name: 'Sephora - Salvador Shopping',
         city: 'Salvador',
-        segment: 'Atacarejo / supermercados',
-        products: 'Alimentos, padaria, açougue, frios, bazar e marca própria',
+        segment: 'Perfumes, maquiagem e skincare',
+        products: 'Fragrâncias, maquiagem, pele, cabelo e marcas premium',
         band: 'Alto',
-        address: 'Rede com lojas em Salvador; primeira unidade inaugurada na cidade',
-        contact: '(71) 3460-8700',
-        website: 'https://atakarejo.com.br/',
-        publicSignals: 'Primeira loja em 1994; mix de mais de 10 mil itens; meta de estar entre as 10 maiores do Brasil; cerca de 7 mil empregos diretos.',
+        address: 'Av. Tancredo Neves, 3133 - Piso L2, Caminho das Árvores, Salvador-BA',
+        contact: '(71) 3342-4930',
+        website: 'https://www.sephora.com.br/nossas-lojas',
+        publicSignals: 'Loja oficial Sephora em shopping de alto fluxo; mix premium e forte ticket médio.',
         sources: [
-          { label: 'Nossa empresa', url: 'https://atakarejo.com.br/nossa-empresa/' },
-          { label: 'Lojas', url: 'https://atakarejo.com.br/nossas-lojas/' }
+          { label: 'Nossas lojas', url: 'https://www.sephora.com.br/nossas-lojas' },
+          { label: 'Sobre a Sephora', url: 'https://www.sephora.com.br/sobre-a-sephora.html' }
         ]
       },
       {
-        name: 'Brascoco',
+        name: 'Natura - Salvador Shopping',
         city: 'Salvador',
-        segment: 'Alimentos / coco e naturais',
-        products: 'Derivados de coco, produtos naturais, saudáveis e marca própria',
+        segment: 'Cosméticos e perfumaria',
+        products: 'Pele, cabelos, perfumes, banho e presentes',
         band: 'Médio-alto',
-        address: 'Rua da Etiópia, nº 10, Galpão 3, Granjas Rurais Presidente Vargas, Salvador-BA',
-        contact: '(71) 3215-2205',
-        website: 'https://brascoco.ind.br/',
-        publicSignals: 'Indústria 100% baiana; fábrica em Salvador desde 2018; terceiriza marca própria; atende com linha saudável e natural.',
+        address: 'Av. Tancredo Neves, 3133 - Loja 2036 L2, Caminho das Árvores, Salvador-BA',
+        contact: '11 95055-6180',
+        website: 'https://www.natura.com.br/nossas-lojas',
+        publicSignals: 'Loja própria com catálogo amplo e experiência de experimentação.',
         sources: [
-          { label: 'A Brascoco', url: 'https://brascoco.ind.br/a-brascoco/' },
-          { label: 'Home', url: 'https://brascoco.ind.br/' }
+          { label: 'Nossas lojas', url: 'https://www.natura.com.br/nossas-lojas?name=Salvador+Shopping' },
+          { label: 'Natura Brasil', url: 'https://www.natura.com.br/' }
         ]
       },
       {
-        name: 'Confiance Ingredientes',
+        name: 'Natura - Boca do Rio',
         city: 'Salvador',
-        segment: 'Ingredientes para indústria',
-        products: 'Ingredientes para alimentos, nutrição animal e pet foods',
+        segment: 'Cosméticos e perfumaria',
+        products: 'Pele, cabelos, perfumes e hidratantes',
         band: 'Médio-alto',
-        address: 'Avenida Luís Viana Filho, 13223, Hangar Business Park, Sala 722, São Cristóvão, Salvador-BA',
-        contact: '(71) 3041-3007',
-        website: 'https://www.confiance-ba.com.br/port/index_port.htm',
-        publicSignals: 'Atua desde 1994; depósito de 1.600 m² próximo ao porto de Salvador; atende todo o Brasil.',
+        address: 'Rua Hélio Machado, 35 - Loja A, Boca do Rio, Salvador-BA',
+        contact: '(71) 3215-9167',
+        website: 'https://www.natura.com.br/nossas-lojas',
+        publicSignals: 'Ponto físico com foco em teste e retirada imediata.',
         sources: [
-          { label: 'Empresa', url: 'https://www.confiance-ba.com.br/port/empresa.htm' },
-          { label: 'Produtos', url: 'https://www.confiance-ba.com.br/port/produtos.htm' }
+          { label: 'Nossas lojas', url: 'https://www.natura.com.br/nossas-lojas' }
         ]
       },
       {
-        name: 'ETEP Indústria Metalúrgica',
+        name: 'Quem disse, Berenice? - Shopping da Bahia',
         city: 'Salvador',
-        segment: 'Metalurgia / petróleo e gás',
-        products: 'Equipamentos e peças para exploração e produção de petróleo e gás',
+        segment: 'Maquiagem e perfume',
+        products: 'Maquiagem, fragrâncias, pele e acessórios',
         band: 'Médio-alto',
-        address: 'Rua Martiniano Bonfim, 283, Retiro, Salvador-BA',
-        contact: '(71) 3381-1804',
-        website: 'https://www.etepindustria.com.br/site/pt/sobre-nos/',
-        publicSignals: 'Fundada em 1983; certificações API e ISO 9001; foco em equipamentos para E&P e presença internacional.',
+        address: 'Av. Tancredo Neves, 148 - Caminho das Árvores, Salvador-BA',
+        contact: '+55 71 3350-5216',
+        website: 'https://www.quemdisseberenice.com.br/nossas-lojas/',
+        publicSignals: 'Marca focada em experimentação, maquiagem e fragrâncias; presença em shopping premium.',
         sources: [
-          { label: 'Sobre nós', url: 'https://www.etepindustria.com.br/site/pt/sobre-nos/' },
-          { label: 'Contato', url: 'https://www.etepindustria.com.br/site/pt/fale-conosco/' }
+          { label: 'Nossas lojas', url: 'https://www.quemdisseberenice.com.br/nossas-lojas/' }
         ]
       },
       {
-        name: 'MMV Indústria',
+        name: 'Quem disse, Berenice? - Salvador Shopping',
         city: 'Salvador',
-        segment: 'Higiene e saneantes',
-        products: 'Produtos saneantes e cosméticos para higiene hospitalar, têxtil, automotiva, pessoal e alimentícia',
+        segment: 'Maquiagem e perfume',
+        products: 'Maquiagem, fragrâncias, skincare e presentes',
         band: 'Médio-alto',
-        address: 'R. Antônio Andrade, 137, Porto Seco Pirajá, Salvador-BA',
-        contact: '(71) 3392-7576',
-        website: 'https://www.mmvindustria.com.br/',
-        publicSignals: 'Atua desde 1999; portfólio com mais de 200 produtos; oito segmentos de atuação; foco em ANVISA e sustentabilidade.',
+        address: 'Av. Tancredo Neves, 3133 - Salvador Shopping, Salvador-BA',
+        contact: 'Consulta na loja oficial',
+        website: 'https://www.quemdisseberenice.com.br/nossas-lojas/',
+        publicSignals: 'Loja física em um dos maiores centros comerciais da cidade.',
         sources: [
-          { label: 'Home', url: 'https://www.mmvindustria.com.br/' },
-          { label: 'About', url: 'https://www.mmvindustria.com.br/about-us/' }
+          { label: 'Nossas lojas', url: 'https://www.quemdisseberenice.com.br/nossas-lojas/' }
         ]
       },
       {
-        name: 'Precisão Mecânica',
+        name: 'Eudora - Shopping Bahia',
         city: 'Salvador',
-        segment: 'Componentes industriais',
-        products: 'Componentes mecânicos, peças sob desenho, tratamento superficial e manutenção',
+        segment: 'Perfumes, maquiagem e cabelos',
+        products: 'Perfumaria, skincare, maquiagem e cabelo',
         band: 'Médio-alto',
-        address: 'Rua do Nepal, Granjas Rurais Presidente Vargas, Salvador-BA',
-        contact: '(71) 3422-5500',
-        website: 'https://www.precisaomecanica.com.br/',
-        publicSignals: 'Mais de 35 anos de mercado; referência para offshore e petróleo; certificação ISO 9001; fabrica peças sob medida.',
+        address: 'Av. Tancredo Neves, 148 - Loja z3-023, Salvador-BA',
+        contact: 'Consulta na loja oficial',
+        website: 'https://www.eudora.com.br/conheca-nossas-lojas/',
+        publicSignals: 'Operação multicanal com loja física e venda direta.',
         sources: [
-          { label: 'Empresa', url: 'https://www.precisaomecanica.com.br/empresa' },
-          { label: 'Contato', url: 'https://www.precisaomecanica.com.br/contato' }
+          { label: 'Nossas lojas', url: 'https://www.eudora.com.br/conheca-nossas-lojas/' },
+          { label: 'Quem somos', url: 'https://www.eudora.com.br/quem-somos/' }
         ]
       },
       {
-        name: 'Filadélfia Alimentos',
+        name: 'Eudora - Salvador Shopping',
         city: 'Salvador',
-        segment: 'Alimentos / condimentos',
-        products: 'Temperos, condimentos, especiarias, chás e naturais',
-        band: 'Médio',
-        address: 'Salvador-BA',
-        contact: '(71) 3391-1598',
-        website: 'https://www.filadelfiaalimentos.com/',
-        publicSignals: 'Mais de 30 anos no mercado baiano; atua em atacado e varejo; atende redes de pequeno, médio e grande porte na Bahia.',
+        segment: 'Perfumes, maquiagem e cabelos',
+        products: 'Perfumaria, skincare, maquiagem e cabelo',
+        band: 'Médio-alto',
+        address: 'Av. Tancredo Neves, 3133 - Caminho das Árvores, Salvador-BA',
+        contact: 'Consulta na loja oficial',
+        website: 'https://www.eudora.com.br/conheca-nossas-lojas/',
+        publicSignals: 'Ponto físico em shopping premium com portfólio amplo e ticket médio consistente.',
         sources: [
-          { label: 'Home', url: 'https://www.filadelfiaalimentos.com/' }
+          { label: 'Nossas lojas', url: 'https://www.eudora.com.br/conheca-nossas-lojas/' }
         ]
       },
       {
-        name: 'KSP Alimentos',
+        name: 'O Boticário - Salvador Shopping',
         city: 'Salvador',
-        segment: 'Frigorífico / distribuição',
-        products: 'Carnes, embutidos, bovinos, aves, suínos, carneiro e pescados',
-        band: 'Médio',
-        address: 'Rua Itapitanga, s/n, térreo, Cassange, Salvador-BA',
-        contact: '(71) 99969-9100',
-        website: 'https://kspalimentos.com.br/',
-        publicSignals: 'Fundada em 2019 no Curuzu; quer atender médio e grande varejo; desenvolve marca própria e distribuição multimarcas.',
+        segment: 'Perfumes, cosméticos e pele',
+        products: 'Fragrâncias, maquiagem, skincare e corpo & banho',
+        band: 'Médio-alto',
+        address: 'Av. Tancredo Neves, 3133 - Piso L1, Salvador-BA',
+        contact: 'Atendimento do shopping',
+        website: 'https://www.salvadorshopping.com.br/loja/o-boticario-1116',
+        publicSignals: 'Rede de franquias com forte giro em perfumaria e presentes.',
         sources: [
-          { label: 'Sobre', url: 'https://kspalimentos.com.br/sobre/' },
-          { label: 'Marca própria', url: 'https://kspalimentos.com.br/marca-propria/' }
+          { label: 'Loja Salvador Shopping', url: 'https://www.salvadorshopping.com.br/loja/o-boticario-1116' }
         ]
       },
       {
-        name: 'Eletrobahia',
+        name: 'O Boticário - Shopping da Bahia',
         city: 'Salvador',
-        segment: 'Materiais elétricos',
-        products: 'Cabos, luminárias, condutores, eletrodutos, automação e itens industriais',
-        band: 'Médio',
-        address: 'Rua Barão de Cotegipe, 112, Mares, Salvador-BA',
-        contact: '(71) 3019-2997',
-        website: 'https://www.eletrobahia.net.br/',
-        publicSignals: 'Loja física com estacionamento próprio; entrega em Salvador e Lauro de Freitas; atende do residencial ao industrial.',
+        segment: 'Perfumes, cosméticos e pele',
+        products: 'Fragrâncias, maquiagem, skincare e corpo & banho',
+        band: 'Médio-alto',
+        address: 'Av. Tancredo Neves, 148 - Caminho das Árvores, Salvador-BA',
+        contact: 'Atendimento do shopping',
+        website: 'https://www.boticario.com.br/',
+        publicSignals: 'Presença em shopping de alto fluxo e bom apelo de presenteável.',
         sources: [
-          { label: 'Home', url: 'https://www.eletrobahia.net.br/' }
+          { label: 'Loja Shopping da Bahia', url: 'https://www.brasil-shoppings.com.br/centros-comerciais/bahia-shoppings/cidade-salvador/shopping-da-bahia/o-boticario' }
         ]
       },
       {
-        name: 'Merco Pão',
+        name: 'O Boticário - Shopping Barra',
         city: 'Salvador',
-        segment: 'Panificação industrial',
-        products: 'Pães ultracongelados e soluções para panificação',
-        band: 'Médio',
-        address: 'Rua Itiúba, 190, Galpão 9, Caji, Lauro de Freitas-BA',
-        contact: '(71) 98643-0096',
-        website: 'https://www.mercopao.com/',
-        publicSignals: 'Desde 2013; frota refrigerada; foco em padronização, eficiência e redução de custos para estabelecimentos.',
+        segment: 'Perfumes, cosméticos e pele',
+        products: 'Fragrâncias, maquiagem, skincare e corpo & banho',
+        band: 'Médio-alto',
+        address: 'Av. Centenário, 2992 - Chame-Chame, Salvador-BA',
+        contact: 'Atendimento do shopping',
+        website: 'https://shoppingbarra.com/loja/o-boticario/',
+        publicSignals: 'Unidade em shopping consolidado e com perfil de compra recorrente.',
         sources: [
-          { label: 'Quem somos', url: 'https://www.mercopao.com/quem-somos' },
-          { label: 'Home', url: 'https://www.mercopao.com/' }
+          { label: 'Loja Shopping Barra', url: 'https://shoppingbarra.com/loja/o-boticario/' }
         ]
       },
       {
-        name: 'Vivara',
+        name: 'Sephora - JK Iguatemi',
         city: 'São Paulo',
-        segment: 'Joias e relógios',
-        products: 'Joias, alianças, relógios, acessórios e marca Life by Vivara',
+        segment: 'Perfumes, maquiagem e skincare',
+        products: 'Fragrâncias, make, pele, cabelo e marcas premium',
         band: 'Alto',
-        address: 'Rua Verbo Divino, Chácara Santo Antonio, São Paulo-SP',
-        contact: 'Atendimento via site e canais corporativos',
-        website: 'https://www.vivara.com.br/',
-        publicSignals: '2024 com receita bruta de R$ 3,3 bi; mais de 457 lojas; 7 milhões de clientes cadastrados; origem em São Paulo.',
+        address: 'Av. Pres. Juscelino Kubitschek, 2041 - Loja 219/241, Vila Olímpia, São Paulo-SP',
+        contact: '(11) 3152-6691',
+        website: 'https://www.sephora.com.br/nossas-lojas',
+        publicSignals: 'Loja premium em um dos shoppings mais fortes de SP.',
         sources: [
-          { label: 'Perfil corporativo', url: 'https://ri.vivara.com.br/a-companhia/perfil-corporativo/' },
-          { label: 'Fale conosco', url: 'https://www.vivara.com.br/fale-conosco' }
+          { label: 'Nossas lojas', url: 'https://www.sephora.com.br/nossas-lojas' },
+          { label: 'Sudeste', url: 'https://www.sephora.com.br/nossas-lojas-sudeste.html' }
         ]
       },
       {
-        name: 'Kalunga',
+        name: 'Sephora - Morumbi Shopping',
         city: 'São Paulo',
-        segment: 'Papelaria e escritório',
-        products: 'Papelaria, informática, material escolar, organização e marcas exclusivas',
+        segment: 'Perfumes, maquiagem e skincare',
+        products: 'Fragrâncias, make, pele, cabelo e marcas premium',
         band: 'Alto',
-        address: 'Rua da Mooca, 766, Mooca, São Paulo-SP',
-        contact: '(11) 3347-7000',
-        website: 'https://www.kalunga.com.br/',
-        publicSignals: 'Mais de 50 anos; 223 lojas físicas; maior varejista de suprimentos para escritório e material escolar no país.',
+        address: 'Av. Roque Petroni Júnior, 1089 - Loja 15-J2, Santo Amaro, São Paulo-SP',
+        contact: '(11) 5183-2794',
+        website: 'https://www.sephora.com.br/nossas-lojas',
+        publicSignals: 'Ponto de alto giro com serviços e experimentação.',
         sources: [
-          { label: 'Lojas', url: 'https://www.kalunga.com.br/lojas/' },
-          { label: 'Desempenho', url: 'https://ri.kalunga.com.br/files/Comentario-de-Desempenho-1.pdf' }
+          { label: 'Nossas lojas', url: 'https://www.sephora.com.br/nossas-lojas' }
         ]
       },
       {
-        name: 'Tok&Stok',
+        name: 'Sephora - Pátio Paulista',
         city: 'São Paulo',
-        segment: 'Móveis e decoração',
-        products: 'Móveis, acessórios, objetos de decoração e itens para casa e escritório',
-        band: 'Médio-alto',
-        address: 'Avenida José Cesar de Oliveira, 21, Vila Leopoldina, São Paulo-SP',
-        contact: 'Atendimento via site e lojas',
-        website: 'https://www.tokstok.com.br/',
-        publicSignals: 'Mais de 40 anos no mercado; operação de milhares de itens; rede de lojas em São Paulo e e-commerce nacional.',
-        sources: [
-          { label: 'Sobre', url: 'https://www.tokstok.com.br/empresa/sobre-a-tokstok' },
-          { label: 'Privacidade', url: 'https://www.tokstok.com.br/empresa/politica-de-privacidade' }
-        ]
-      },
-      {
-        name: 'Polishop',
-        city: 'São Paulo',
-        segment: 'Eletroportáteis e utilidades',
-        products: 'Airfryers, panelas, beleza, fitness, limpeza e casa',
+        segment: 'Perfumes, maquiagem e skincare',
+        products: 'Fragrâncias, make, pele, cabelo e marcas premium',
         band: 'Alto',
-        address: 'São Paulo-SP',
-        contact: 'Atendimento pelo site e lojas',
-        website: 'https://www.polishop.com.br/',
-        publicSignals: 'Mais de 100 lojas; operação omnichannel; catálogo forte em produtos inovadores e venda por internet desde 2000.',
+        address: 'Rua Treze de Maio, 1947 - Loja 3005 a 3009, Bela Vista, São Paulo-SP',
+        contact: 'Loja oficial no shopping',
+        website: 'https://www.sephora.com.br/nossas-lojas',
+        publicSignals: 'Loja em região central e de grande circulação.',
         sources: [
-          { label: 'Quem somos', url: 'https://www.polishop.com.br/quem-somos' },
-          { label: 'Home', url: 'https://www.polishop.com.br/' }
+          { label: 'Sudeste', url: 'https://www.sephora.com.br/nossas-lojas-sudeste.html' }
         ]
       },
       {
-        name: 'Preçolandia',
+        name: 'Sephora - Mooca Plaza',
         city: 'São Paulo',
-        segment: 'Utilidades domésticas',
-        products: 'Cozinha, cama, mesa, banho, decoração, organização e eletroportáteis',
-        band: 'Médio-alto',
-        address: 'Rua Cunha Gago, 370, Pinheiros, São Paulo-SP',
-        contact: 'Atendimento via site e lojas',
-        website: 'https://www.precolandia.com.br/',
-        publicSignals: 'Fundada em 1978 na Água Rasa; 50 lojas pelo Brasil; origem e forte presença na capital paulista.',
+        segment: 'Perfumes, maquiagem e skincare',
+        products: 'Fragrâncias, make, pele, cabelo e marcas premium',
+        band: 'Alto',
+        address: 'R. Cap. Pacheco e Chaves, 313 - Loja SMO1017B, Vila Prudente, São Paulo-SP',
+        contact: '(11) 2065-3413',
+        website: 'https://www.sephora.com.br/nossas-lojas',
+        publicSignals: 'Loja em shopping de alto fluxo com mix completo de beleza.',
         sources: [
-          { label: 'História', url: 'https://www.precolandia.com.br/historia' },
-          { label: 'Privacidade', url: 'https://www.precolandia.com.br/politica-de-privacidade' }
+          { label: 'Nossas lojas', url: 'https://www.sephora.com.br/nossas-lojas' }
         ]
       },
       {
-        name: 'Ri Happy',
+        name: 'Natura - Morumbi',
         city: 'São Paulo',
-        segment: 'Brinquedos e infantis',
-        products: 'Brinquedos, bebê, jogos, esportes, tecnologia e corporativo',
+        segment: 'Cosméticos e perfumaria',
+        products: 'Pele, cabelos, perfumes, banho e presentes',
         band: 'Médio-alto',
-        address: 'Cidade de São Paulo-SP',
-        contact: 'Atendimento e B2B via site',
-        website: 'https://www.rihappy.com.br/',
-        publicSignals: 'Posicionada como a maior loja de brinquedos do Brasil; venda para empresas; presença nacional com base administrativa em São Paulo.',
+        address: 'Av. Roque Petroni Junior, 1089, Jardim das Acácias, São Paulo-SP',
+        contact: '11 96854-5070',
+        website: 'https://www.natura.com.br/nossas-lojas',
+        publicSignals: 'Loja própria com forte volume e perfil premium.',
         sources: [
-          { label: 'Site', url: 'https://www.rihappy.com.br/' },
-          { label: 'Empresas', url: 'https://www.rihappy.com.br/rihappy-para-empresas' }
+          { label: 'Nossas lojas', url: 'https://www.natura.com.br/nossas-lojas' }
         ]
       },
       {
-        name: 'Dengo',
+        name: 'Natura - Villa Lobos',
         city: 'São Paulo',
-        segment: 'Chocolate premium',
-        products: 'Chocolates, presentes, café, kits e linha corporativa',
+        segment: 'Cosméticos e perfumaria',
+        products: 'Pele, cabelos, perfumes, banho e presentes',
         band: 'Médio-alto',
-        address: 'Rua Vigário Taques Bitencourt, 171, Santo Amaro, São Paulo-SP',
-        contact: '+55 11 97183-6890',
-        website: 'https://www.dengo.com.br/',
-        publicSignals: 'Marca brasileira de cacau e chocolate; loja-fábrica e vendas corporativas; foco em origem, impacto social e linhas premium.',
+        address: 'Av. Dra. Ruth Cardoso, 4777, Jardim Universidade Pinheiros, São Paulo-SP',
+        contact: '11 95055-3787',
+        website: 'https://www.natura.com.br/nossas-lojas',
+        publicSignals: 'Unidade em região de alto fluxo e ticket médio consistente.',
         sources: [
-          { label: 'Nossas lojas', url: 'https://www.dengo.com.br/nossas-lojas' },
-          { label: 'Fábrica', url: 'https://www.dengo.com.br/fabrica-de-dengo' }
+          { label: 'Nossas lojas', url: 'https://www.natura.com.br/nossas-lojas' }
         ]
       },
       {
-        name: 'Kopenhagen',
+        name: 'Natura - Pátio Paulista',
         city: 'São Paulo',
-        segment: 'Chocolates finos',
-        products: 'Chocolates, trufas, presentes, clássicos e linhas premium',
+        segment: 'Cosméticos e perfumaria',
+        products: 'Pele, cabelos, perfumes, banho e presentes',
         band: 'Médio-alto',
-        address: 'São Paulo-SP',
-        contact: 'Atendimento via site',
-        website: 'https://www.kopenhagen.com.br/',
-        publicSignals: 'Mais de 95 anos; marca forte em presentes; portfólio de clássicos e linhas saudáveis; operação ligada ao Grupo CRM/Nestlé.',
+        address: 'Rua Treze de Maio, 1933, Bela Vista, São Paulo-SP',
+        contact: '11 95055-6180',
+        website: 'https://www.natura.com.br/nossas-lojas',
+        publicSignals: 'Loja com foco em experimentação e retirada rápida.',
         sources: [
-          { label: 'Sobre', url: 'https://www.kopenhagen.com.br/sobre-a-kopenhagen' },
-          { label: 'Privacidade', url: 'https://www.kopenhagen.com.br/politica-de-privacidade' }
+          { label: 'Nossas lojas', url: 'https://www.natura.com.br/nossas-lojas' }
         ]
       },
       {
-        name: 'Fast Shop',
+        name: 'Natura - Anália Franco',
         city: 'São Paulo',
-        segment: 'Eletroeletrônicos',
-        products: 'Eletrodomésticos, eletrônicos, telefonia e informática',
+        segment: 'Cosméticos e perfumaria',
+        products: 'Pele, cabelos, perfumes, banho e presentes',
         band: 'Médio-alto',
-        address: 'Avenida Zaki Narchi, 1650, Carandiru, São Paulo-SP',
-        contact: '11 3003-3728',
-        website: 'https://secure3.fastshop.com.br/',
-        publicSignals: 'Multicanal com lojas físicas, site e suporte técnico; sede em São Paulo; operação histórica desde a década de 1970.',
+        address: 'Av. Regente Feijó, 1739, Vila Regente Feijó, São Paulo-SP',
+        contact: '11 94101-4231',
+        website: 'https://www.natura.com.br/nossas-lojas',
+        publicSignals: 'Ponto forte para linhas de rosto, corpo e cabelos.',
         sources: [
-          { label: 'Privacidade', url: 'https://fastshopwr-a.akamaihd.net/pdf/politica_de_privacidade.pdf' },
-          { label: 'Site', url: 'https://secure3.fastshop.com.br/' }
+          { label: 'Nossas lojas', url: 'https://www.natura.com.br/nossas-lojas' }
         ]
       },
       {
-        name: 'Santa Lolla',
+        name: 'Quem disse, Berenice? - Center Norte',
         city: 'São Paulo',
-        segment: 'Calçados e acessórios',
-        products: 'Sapatos, bolsas e acessórios femininos',
+        segment: 'Maquiagem e perfume',
+        products: 'Maquiagem, fragrâncias, pele e acessórios',
         band: 'Médio-alto',
-        address: 'Avenida Bem-Te-Vi, 43, Moema, São Paulo-SP',
-        contact: 'Relacionamento via site',
-        website: 'https://www.santalolla.com.br/',
-        publicSignals: 'Marca de moda com e-commerce e operação física; catálogo amplo de calçados e bolsas; sede em Moema.',
+        address: 'Travessa Casalbuono, 120, São Paulo-SP',
+        contact: 'Consulta na loja oficial',
+        website: 'https://www.quemdisseberenice.com.br/nossas-lojas/',
+        publicSignals: 'Excelente fluxo de varejo e presença consolidada em SP.',
         sources: [
-          { label: 'Contrato', url: 'https://www.santalolla.com.br/institucional/contrato-de-compra-e-venda' },
-          { label: 'Home', url: 'https://www.santalolla.com.br/' }
+          { label: 'Nossas lojas', url: 'https://www.quemdisseberenice.com.br/nossas-lojas/' }
+        ]
+      },
+      {
+        name: 'Eudora - Aricanduva',
+        city: 'São Paulo',
+        segment: 'Perfumes, maquiagem e cabelos',
+        products: 'Perfumaria, skincare, maquiagem e cabelo',
+        band: 'Médio-alto',
+        address: 'Av. Aricanduva, 5555, Jardim Santa Terezinha, São Paulo-SP',
+        contact: 'Consulta na loja oficial',
+        website: 'https://www.eudora.com.br/conheca-nossas-lojas/',
+        publicSignals: 'Loja física em shopping de alto tráfego e bom ticket para presentes.',
+        sources: [
+          { label: 'Nossas lojas', url: 'https://www.eudora.com.br/conheca-nossas-lojas/' }
         ]
       }
     ];
