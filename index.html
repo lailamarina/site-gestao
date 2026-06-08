@@ -55,6 +55,9 @@
         body { font-family: 'Nunito Sans', sans-serif; overflow-x: hidden; }
         h1, h2, h3, h4, h5, h6 { font-family: 'Lora', Georgia, serif; }
         .gradient-bg { background: linear-gradient(135deg, #5D2410 0%, #7F6044 100%); }
+        /* Botões de ação em verde (chamada para WhatsApp) */
+        .btn-wa { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important; color: #fff !important; }
+        .btn-wa:hover { background: linear-gradient(135deg, #1ebe5a 0%, #0e7a6d 100%) !important; }
         .gradient-text {
             background: linear-gradient(135deg, #5D2410 0%, #7F6044 100%);
             -webkit-background-clip: text;
@@ -175,7 +178,6 @@
                     <li><a href="#home" class="font-medium text-text hover:text-primary transition-colors">Home</a></li>
                     <li><a href="#sobre" class="font-medium text-text hover:text-primary transition-colors">Sobre</a></li>
                     <li><a href="#servicos" class="font-medium text-text hover:text-primary transition-colors">Serviços</a></li>
-                    <li><a href="#depoimentos" class="font-medium text-text hover:text-primary transition-colors">Depoimentos</a></li>
                     <li><a href="#contato" class="font-medium text-text hover:text-primary transition-colors">Contato</a></li>
                 </ul>
                 <button id="nav-toggle" class="md:hidden text-2xl text-text">
@@ -189,7 +191,6 @@
                 <li><a href="#home" class="block font-medium text-text hover:text-primary">Home</a></li>
                 <li><a href="#sobre" class="block font-medium text-text hover:text-primary">Sobre</a></li>
                 <li><a href="#servicos" class="block font-medium text-text hover:text-primary">Serviços</a></li>
-                <li><a href="#depoimentos" class="block font-medium text-text hover:text-primary">Depoimentos</a></li>
                 <li><a href="#contato" class="block font-medium text-text hover:text-primary">Contato</a></li>
             </ul>
         </div>
@@ -219,7 +220,7 @@
                     Aqui, não prometemos atalhos. Construímos bases sólidas para negócios que querem crescer com verdade.
                 </p>
                 <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-                    <a href="#contato" class="btn-shine inline-flex items-center gap-2 gradient-bg text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                    <a href="#contato" class="btn-shine inline-flex items-center gap-2 btn-wa text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
                         Quero estruturar meu negócio
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -509,6 +510,7 @@
                                     <li class="flex items-start gap-2"><i class="fas fa-check text-primary mt-1"></i>Diagnóstico estratégico do negócio</li>
                                     <li class="flex items-start gap-2"><i class="fas fa-check text-primary mt-1"></i>Definição de prioridades e plano de ação</li>
                                     <li class="flex items-start gap-2"><i class="fas fa-check text-primary mt-1"></i>Coordenação de equipes internas e externas</li>
+                                    <li class="flex items-start gap-2"><i class="fas fa-check text-primary mt-1"></i>Gestão de Projetos: prazos, entregas e responsáveis</li>
                                     <li class="flex items-start gap-2"><i class="fas fa-check text-primary mt-1"></i>Monitoramento de indicadores e resultados</li>
                                     <li class="flex items-start gap-2"><i class="fas fa-check text-primary mt-1"></i>Tomada de decisão orientada por estratégia</li>
                                 </ul>
@@ -604,14 +606,34 @@
                     <p class="text-text-light mb-4 text-sm">
                         Atuamos na estruturação e execução de processos comerciais para aumentar conversão sem comprometer a experiência do cliente.
                     </p>
-                    <div class="bg-cream rounded-lg p-4">
-                        <div class="flex items-center gap-2 text-text">
-                            <i class="fas fa-user-check text-primary"></i>
-                            <span><strong>Closer</strong></span>
+                    <div class="space-y-3">
+                        <div class="bg-cream rounded-lg p-4">
+                            <div class="flex items-center gap-2 text-text">
+                                <i class="fas fa-chess text-primary"></i>
+                                <span><strong>Comercial Estratégico</strong></span>
+                            </div>
+                            <p class="text-text-light text-sm mt-1">
+                                Estruturação do processo comercial: funil, metas, indicadores e rotina de vendas para crescer com previsibilidade.
+                            </p>
                         </div>
-                        <p class="text-text-light text-sm mt-1">
-                            Responsável por conduzir negociações com técnica, clareza e abordagem humanizada, focando em decisões conscientes e conversões qualificadas.
-                        </p>
+                        <div class="bg-cream rounded-lg p-4">
+                            <div class="flex items-center gap-2 text-text">
+                                <i class="fas fa-comments-dollar text-primary"></i>
+                                <span><strong>Social Selling</strong></span>
+                            </div>
+                            <p class="text-text-light text-sm mt-1">
+                                Prospecção ativa e relacionamento nas redes para gerar oportunidades qualificadas e aproximar a marca de quem decide.
+                            </p>
+                        </div>
+                        <div class="bg-cream rounded-lg p-4">
+                            <div class="flex items-center gap-2 text-text">
+                                <i class="fas fa-user-check text-primary"></i>
+                                <span><strong>Closer</strong></span>
+                            </div>
+                            <p class="text-text-light text-sm mt-1">
+                                Responsável por conduzir negociações com técnica, clareza e abordagem humanizada, focando em decisões conscientes e conversões qualificadas.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
@@ -669,85 +691,10 @@
 
             <!-- CTA -->
             <div class="text-center">
-                <a href="#contato" class="inline-flex items-center gap-2 gradient-bg text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <a href="#contato" class="inline-flex items-center gap-2 btn-wa text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     Quero saber mais sobre os serviços
                     <i class="fas fa-arrow-right"></i>
                 </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Depoimentos Section -->
-    <section id="depoimentos" class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
-                <span class="inline-block px-6 py-3 gradient-bg text-white text-base md:text-lg font-bold rounded-full mb-6 shadow-lg">Depoimentos</span>
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-dark mb-4">O que nossos clientes dizem</h2>
-                <p class="text-text-light max-w-2xl mx-auto">
-                    Veja como ajudamos empresas a transformarem seus negócios.
-                </p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                <!-- Depoimento 1 -->
-                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
-                    <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-quote-left text-white"></i>
-                    </div>
-                    <p class="text-text italic mb-6 leading-relaxed">
-                        "A consultoria da Gestão & Negócios foi transformadora para nossa empresa.
-                        Em apenas 6 meses, conseguimos aumentar nosso faturamento em 40% e reduzir
-                        custos operacionais significativamente."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
-                            <i class="fas fa-user text-text-light"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-primary-dark">Carlos Silva</h4>
-                            <span class="text-sm text-text-light">CEO - TechSolutions</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Depoimento 2 -->
-                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
-                    <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-quote-left text-white"></i>
-                    </div>
-                    <p class="text-text italic mb-6 leading-relaxed">
-                        "Profissionais extremamente competentes e dedicados. O planejamento estratégico
-                        desenvolvido nos deu clareza e direção. Recomendo fortemente para qualquer
-                        empresa que busca crescimento."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
-                            <i class="fas fa-user text-text-light"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-primary-dark">Ana Rodrigues</h4>
-                            <span class="text-sm text-text-light">Diretora - Innova Marketing</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Depoimento 3 -->
-                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg md:col-span-2 lg:col-span-1">
-                    <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-quote-left text-white"></i>
-                    </div>
-                    <p class="text-text italic mb-6 leading-relaxed">
-                        "A reestruturação dos nossos processos internos foi fundamental para escalarmos
-                        o negócio. A equipe da Gestão & Negócios entendeu nossas necessidades e entregou
-                        resultados acima do esperado."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
-                            <i class="fas fa-user text-text-light"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-primary-dark">Roberto Mendes</h4>
-                            <span class="text-sm text-text-light">Fundador - StartUp Hub</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -764,7 +711,7 @@
                 Agende uma consultoria gratuita e descubra como podemos ajudar sua empresa a crescer.
             </p>
             <div data-aos="fade-up" data-aos-delay="200">
-                <a href="#contato" class="btn-shine inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                <a href="#contato" class="btn-shine inline-flex items-center gap-2 btn-wa text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
                     Agendar Consultoria
                     <i class="fas fa-calendar-check"></i>
                 </a>
@@ -852,6 +799,9 @@
                                 <option value="trafego">Tráfego Pago e Crescimento Estruturado</option>
                                 <option value="influencia">Marketing de Influência</option>
                                 <option value="vendas">Vendas e Conversão</option>
+                                <option value="comercial">Comercial Estratégico</option>
+                                <option value="social-selling">Social Selling</option>
+                                <option value="projetos">Gestão de Projetos</option>
                                 <option value="atendimento">Atendimento e Relacionamento</option>
                                 <option value="consultoria">Consultoria Express</option>
                             </select>
@@ -861,7 +811,7 @@
                             <textarea id="mensagem" name="mensagem" rows="4" placeholder="Como podemos ajudar?"
                                 class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors resize-y"></textarea>
                         </div>
-                        <button type="submit" class="w-full gradient-bg text-white px-6 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2">
+                        <button type="submit" class="w-full btn-wa text-white px-6 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2">
                             Enviar Mensagem
                             <i class="fas fa-paper-plane"></i>
                         </button>
@@ -887,7 +837,6 @@
                         <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
                         <li><a href="#sobre" class="hover:text-white transition-colors">Sobre</a></li>
                         <li><a href="#servicos" class="hover:text-white transition-colors">Serviços</a></li>
-                        <li><a href="#depoimentos" class="hover:text-white transition-colors">Depoimentos</a></li>
                         <li><a href="#contato" class="hover:text-white transition-colors">Contato</a></li>
                     </ul>
                 </div>
@@ -906,7 +855,7 @@
                     <form class="flex">
                         <input type="email" placeholder="Seu e-mail"
                             class="flex-1 px-4 py-3 bg-white/10 border-none rounded-l-xl text-white placeholder-gray-400 focus:outline-none focus:bg-white/20 transition-colors">
-                        <button type="submit" class="px-4 py-3 gradient-bg rounded-r-xl hover:opacity-90 transition-opacity">
+                        <button type="submit" class="px-4 py-3 btn-wa rounded-r-xl hover:opacity-90 transition-opacity">
                             <i class="fas fa-arrow-right text-white"></i>
                         </button>
                     </form>
@@ -932,7 +881,7 @@
 
     <!-- Botão Scroll to Top -->
     <button id="scroll-top"
-            class="fixed bottom-6 right-24 z-50 w-12 h-12 gradient-bg rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
+            class="fixed bottom-6 right-24 z-50 w-12 h-12 btn-wa rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
             aria-label="Voltar ao topo">
         <i class="fas fa-chevron-up text-white"></i>
     </button>
