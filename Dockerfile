@@ -9,6 +9,7 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copiar arquivos do site
 COPY index.html /usr/share/nginx/html/
+COPY mapeamento-clientes.html /usr/share/nginx/html/
 COPY styles.css /usr/share/nginx/html/
 COPY script.js /usr/share/nginx/html/
 COPY assets/ /usr/share/nginx/html/assets/
